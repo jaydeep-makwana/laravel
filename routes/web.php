@@ -23,3 +23,5 @@ Route::get("interest/{amount}", [interest::class, "clcInt"]);
 Route::get("watch", function () {
     return view("watch");
 });
+
+Route::get("mobile",[mobile::class,"getDetails"]);
