@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\interest;
+use App\Http\Controllers\mobile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("interest/{amount}", [interest::class, "clcInt"]);
+Route::get("interest/{amount}/{interest}/{duration}", [interest::class, "clcInt"]);
 
-Route::get("watch", function () {
+Route::get("/watch/", function () {
     return view("watch");
 });
 
-Route::get("mobile",[mobile::class,"getDetails"]);
+Route::get("mobile/{phone}",[mobile::class,"getDetails"]);
