@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\interest;
 use App\Http\Controllers\mobile;
+use App\Http\Controllers\percentage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +20,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get("percentage/{mark1}/{mark2}/{mark3}/{mark4}/{mark5}/{mark6}",[percentage::class,"getPercentage"]);
+
 Route::get("interest/{amount}/{interest}/{duration}", [interest::class, "clcInt"]);
 
-Route::get("/watch/", function () {
-    return view("watch");
+Route::get("clock", function () {
+    return view("clock");
+});
+
+Route::get("todo", function () {
+    return view("todo");
+});
+
+Route::get("pincode", function () {
+    return view("pincode");
+});
+
+Route::get("rl", function () {
+    return view("reg_log");
+});
+
+Route::get("js_form", function () {
+    return view("jsForm");
 });
 
 Route::get("mobile/{phone}",[mobile::class,"getDetails"]);
