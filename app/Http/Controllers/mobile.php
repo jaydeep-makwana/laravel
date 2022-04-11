@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-// echo "Model : ".$json[0]['modelName'];
-
 class mobile extends Controller
 {
 
