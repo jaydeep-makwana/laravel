@@ -3,3 +3,11 @@
      height: 100%;
      width: 100%;
  }
+ 
+ h1 {
+     color: aqua;
+ }
+ 
+ h2 {
+     color: rgb(152, 255, 255);
+ }

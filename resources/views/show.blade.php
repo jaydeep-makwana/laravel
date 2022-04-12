@@ -14,10 +14,30 @@
 <body>
 
 
-<div class="container-fluid h-100 w-100 p-0 bg-dark text-white">
-    
-</div>
+    <div class="container-fluid h-100 w-100 p-0 bg-dark text-white text-center">
+        <h1>Welcome</h1>
+        <hr>
+        <h2>
+            @if(!isset($data))
+            List Of Mobiles <br>
+            <hr>
+            @foreach($array as $value)
+
+                @if($value == 'realme')
+                <i>{{$value}} <br> </i>
+                @else
+                {{$value}} <br>
+                @endif
+
+            @endforeach
+
+            @else
+                Hello  {{$data}}
+            @endif
+        </h2>
+    </div>
 
 
 </body>
+
 </html>
