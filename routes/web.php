@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\interest;
 use App\Http\Controllers\mobile;
 use App\Http\Controllers\percentage;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\show_data;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,6 @@ Route::get("js_form", function () {
 });
 
 Route::get("mobile/{phone}",[mobile::class,"getDetails"]);
+
+Route::get("show",[show_data::class,"show_data1"]);
+Route::get("show/{data}",[show_data::class,"show_data2"]);
