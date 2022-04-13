@@ -45,6 +45,10 @@ Route::get("js_form", function () {
     return view("jsForm");
 });
 
+Route::get("programming", function () {
+    return view("pro_lang");
+});
+
 Route::get("mobile/{phone}",[mobile::class,"getDetails"]);
 
 Route::get("show",[show_data::class,"show_data1"]);
