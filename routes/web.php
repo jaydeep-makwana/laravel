@@ -5,6 +5,7 @@ use App\Http\Controllers\interest;
 use App\Http\Controllers\mobile;
 use App\Http\Controllers\percentage;
 use App\Http\Controllers\show_data;
+use App\Http\Controllers\programming;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,11 +46,15 @@ Route::get("js_form", function () {
     return view("jsForm");
 });
 
-Route::get("programming", function () {
-    return view("pro_lang");
-});
+// Route::get("programming", function () {
+//     return view("pro_lang");
+// });
+Route::get("programming/{classes}",[programming::class,"web"]);
 
 Route::get("mobile/{phone}",[mobile::class,"getDetails"]);
 
 Route::get("show",[show_data::class,"show_data1"]);
 Route::get("show/{data}",[show_data::class,"show_data2"]);
+
+
+Route::view("abt","about");
