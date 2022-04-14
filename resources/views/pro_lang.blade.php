@@ -22,14 +22,14 @@
 
 <body>
 
-    <div class="container row align-items-center  ">
+    <div class="container row align-items-center ">
 
 
         <div class="card col-lg-3 " style="width: 18rem;">
             <img src="{{url('images/View-HTML.jpg')}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">HTML</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">HTML is the standard markup language for Web pages.HTML is a structure for website</p>
             </div>
         </div>
 
@@ -37,7 +37,7 @@
             <img src="{{url('images/Blog-Info-graphics-1000X700-02.jpg')}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">CSS</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">CSS is the language we use to style an HTML document.CSS describes how HTML elements should be displayed.</p>
             </div>
         </div>
 
@@ -45,7 +45,7 @@
             <img src="{{url('images/116907691-combination-letter-js-j-s-in-grey-red-color-alphabet-logo-icon-design-suitable-for-a-company-or-busi.webp')}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">JS</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">JavaScript is the world's most popular programming language.JavaScript is the programming language of the Web.</p>
             </div>
         </div>
         
@@ -53,7 +53,7 @@
             <img src="{{url('images/php-developer-person-holding-smartphone-blurred-cityscape-background-77172925.jpg')}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">PHP</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">PHP is a server scripting language, and a powerful tool for making dynamic and interactive Web pages.</p>
             </div>
         </div>
         
