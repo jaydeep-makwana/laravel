@@ -58,3 +58,8 @@ Route::get("show/{data}",[show_data::class,"show_data2"]);
 
 
 Route::view("home","home");
+Route::view("dashboard","dashboard");
+Route::view("login","login");
+Route::view("update","update");
+Route::view("user_registration","user_registration");
+Route::view("user_welcome","user_welcome");
