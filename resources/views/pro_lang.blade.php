@@ -25,7 +25,6 @@
 
  
     <div class="container-fluid  mx-auto text-center bg-dark w-100 h-100">
- <h1 class="text-success"> {{$nameOfClasses}}</h1>
         <div class="row p-5">
 
             <div class="col-lg-3">

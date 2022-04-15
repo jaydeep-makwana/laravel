@@ -1,0 +1,20 @@
+/* home page css */
+
+.main {
+    margin-top: 10%;
+}
+
+.home-bg {
+    background-image: url(../images/1543613757886.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* navbar css */
+
+nav {
+    background-color: black;
+}
