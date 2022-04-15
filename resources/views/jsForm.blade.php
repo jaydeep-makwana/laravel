@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/user_admin.css">
+
     <title>form(JS)</title>
     <style>
         .css {
@@ -12,6 +15,7 @@
             margin: 5px;
             background-color: greenyellow;
             border: 3px solid red;
+            width: 80%;
         }
 
         .lcss {
@@ -23,7 +27,8 @@
 
         #root {
             background-color: rgb(228, 228, 228);
-            position: absolute;
+            margin: auto ;
+            width: 40%;
         }
 
         form {
@@ -42,10 +47,32 @@
 </head>
 
 <body>
-    <div id="root">
-        <div id="root1"></div>
-    </div>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark  ">
 
+<img src="{{asset('images/ms.png')}}" width="100px" alt="">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse h4" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active ml-4">
+            <a class="nav-link" href="#">JS Form <span class="sr-only">(current)</span></a>
+        </li>
+
+         
+
+    </ul>
+</div>
+
+</nav> 
+
+
+        <div id="root" >
+            <div id="root1"></div>
+        </div>
+        
     <script>
         const rootTag = document.getElementById('root');
 

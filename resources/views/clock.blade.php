@@ -25,7 +25,7 @@
 
         .clock {
 
-            background-color: rgb(237, 155, 245);
+            /* background-color: rgb(237, 155, 245); */
             width: 20%;
             margin-left: 40%;
             align-items: center;
@@ -34,19 +34,29 @@
             padding: 10px;
             border-radius: 4px;
             padding-top: 1px;
-            
+
+        }
+        img{
+            border-radius: 50%;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-light">
+    
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="images/Sapling-Analog-Round-Front-View-Dial-S-Hands-Standard.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Clock
+        </a>
+    </nav>
 
-    <div class="clock">
-        <p> TIME</p>
+    <div class="clock bg-primary ">
+        <p class="text-white"> TIME</p>
         <div id="time">
 
         </div>
-        <p>DATE</p>
+        <p class="text-white">DATE</p>
         <div id="date">
 
         </div>

@@ -128,5 +128,8 @@
                 </div>
             </div>
         </div>
+        <script>
+            alert("Default Page..");
+        </script>
     </body>
 </html>

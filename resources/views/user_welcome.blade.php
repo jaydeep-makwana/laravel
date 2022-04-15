@@ -32,7 +32,7 @@
 
             <div class="d-flex user-data">
 
-                <img src="<?php ?>" alt="Network Error" width='50px' height='50px' data-toggle="modal" data-target="#exampleModal">
+                <img src="images/admin.png" alt="Network Error" width='50px' height='50px' data-toggle="modal" data-target="#exampleModal">
 
                 <!-- Modal -->
                 <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -51,12 +51,12 @@
                             </div>
 
                             <div class="modal-body">
-                                <h2><a href="user_delete.php?del_id=<?php ?>" class="btn btn-danger">Delete Account</a></h2>
+                                <h2><a href="#" class="btn btn-danger">Delete Account</a></h2>
                             </div>
 
 
                             <div class="modal-body">
-                                <h2><a href="user_logout.php" class="btn btn-danger">Log out</a></h2>
+                                <h2><a href="#" class="btn btn-danger">Log out</a></h2>
                             </div>
 
                         </div>
