@@ -12,7 +12,7 @@ class allInOne extends Controller
      function todo(){
          return view("todo");
      }
-     function u_reg(){
+     function user_registration(){
          return view("user_registration");
      }
      function reg_log(){

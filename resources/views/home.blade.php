@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="nav-item active ml-4">
-                    <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="login">Login <span class="sr-only">(current)</span></a>
                 </li>
 
             </ul>
@@ -45,7 +45,7 @@
                 <img src="{{asset('images/user-icon-free-18.jpg')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">USERS</h5>
-                    <a href="#" class="btn btn-warning">Click here</a>
+                    <a href="user_registration" class="btn btn-warning">Click here</a>
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@
                 <img src="{{asset('images/Admin.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">ADMIN</h5>
-                    <a href="#" class="btn btn-dark">Click here</a>
+                    <a href="dashboard" class="btn btn-dark">Click here</a>
                 </div>
             </div>
         </div>

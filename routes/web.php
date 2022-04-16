@@ -8,6 +8,7 @@ use App\Http\Controllers\show_data;
 use App\Http\Controllers\allInOne;
 use App\Http\Controllers\pincode;
 use App\Http\Controllers\event;
+use App\Http\Controllers\getUserData;
 use App\Http\Controllers\login;
 use App\Http\Controllers\welcome;
 use App\Http\Controllers\update;
@@ -44,7 +45,7 @@ Route::get("update", [update::class, "update"]);
 
 Route::get("clock", [allInOne::class, "clock"]);
 Route::get("todo", [allInOne::class, "todo"]);
-Route::get("u_reg", [allInOne::class, "u_reg"]);
+Route::get("user_registration", [allInOne::class, "user_registration"]);
 Route::get("reg_log", [allInOne::class, "reg_log"]);
 Route::get("js_form", [allInOne::class, "js_form"]);
 Route::get("pro_lang", [allInOne::class, "pro_lang"]);
@@ -61,3 +62,8 @@ Route::get("interest/{amount}/{interest}/{duration}", [interest::class, "clcInt"
 Route::fallback(function () {
     return view('Default');
 });
+
+Route::post("user_data", [getUserData::class, "user_data"]);
+
+Route::view("home","home");
+Route::view("s","show_data");

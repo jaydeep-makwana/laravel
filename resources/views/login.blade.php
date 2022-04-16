@@ -22,11 +22,7 @@
 <div class="collapse navbar-collapse h4" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active ml-4">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-
-        <li class="nav-item active ml-4">
-            <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
         </li>
 
     </ul>
@@ -60,7 +56,7 @@
 
                 <div class="form-group mt-5 text-center bg-light ">
                     <p class="text-danger"> don't have have an account </p>
-                    <a href="#"> click here</a>
+                    <a href="user_registration"> click here</a>
                 </div>
 
             </form>

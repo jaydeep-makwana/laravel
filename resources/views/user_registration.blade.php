@@ -23,11 +23,11 @@
         <div class="collapse navbar-collapse h4" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active ml-4">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item active ml-4">
-                    <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="login">Login <span class="sr-only">(current)</span></a>
                 </li>
 
             </ul>
@@ -37,13 +37,13 @@
 
     <!-- register form -->
     <div class="container mt-5 form-bg-user w-100 ">
-        <form enctype="multipart/form-data">
+        <form action="user_data" method="POST" enctype="multipart/form-data">
             <h1 class="text-center">Register</h1>
-
             <div class="row">
-
+                
                 <div class="col-lg-6 ">
-
+                    @csrf
+                    
                     <div class="form-group">
                         <label for="" class="">First Name</label> <small> * <?php    ?> </small>
                         <input class="form-control" type="text" name="fName" value="<?php ?>">
@@ -159,7 +159,7 @@
 
                     <div class="form-group mt-5 text-center   bg-light ">
                         <p class="text-danger">already have an account?</p>
-                        <a href="#"> click here</a>
+                        <a href="login"> click here</a>
                     </div>
 
                 </div>
