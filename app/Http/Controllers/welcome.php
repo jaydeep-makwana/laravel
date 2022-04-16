@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class welcome extends Controller
 {
-    function welcome(){
-        return view("user_welcome");
+    function welcome($user){
+        return view("user_welcome",["user"=>"$user"]);
     }
 }

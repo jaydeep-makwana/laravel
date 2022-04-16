@@ -37,7 +37,7 @@ Route::get("event", [event::class, "event"]);
 
 Route::get("login", [login::class, "login"]);
 
-Route::get("welcome", [welcome::class, "welcome"]);
+Route::get("welcome/{user}", [welcome::class, "welcome"]);
 
 Route::get("update", [update::class, "update"]);
 
@@ -59,5 +59,5 @@ Route::get("mobile/{phone}", [mobile::class, "getDetails"]);
 Route::get("interest/{amount}/{interest}/{duration}", [interest::class, "clcInt"]);
 
 Route::fallback(function () {
-    return view("welcome");
+    return view('Default');
 });
