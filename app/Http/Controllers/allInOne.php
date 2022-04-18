@@ -13,7 +13,7 @@ class allInOne extends Controller
          return view("todo");
      }
      function user_registration(){
-         return view("user_registration");
+         return view("form/user_registration");
      }
      function reg_log(){
          return view("reg_log");
@@ -25,7 +25,7 @@ class allInOne extends Controller
          return view("Pro_lang");
      }
      function dashboard(){
-         return view("dashboard");
+         return view("form/dashboard");
      }
 
 }
