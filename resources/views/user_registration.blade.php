@@ -154,8 +154,8 @@
                         <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
                     </div>
 
-                    <input type="submit" name="submit" class="btn btn-primary">
-                    <input type="reset" name="submit" value="Reset" class="btn btn-warning">
+                    <button type="submit" name="submit" class="btn btn-primary">
+                    <button type="reset" name="submit" value="Reset" class="btn btn-warning">
 
                     <div class="form-group mt-5 text-center   bg-light ">
                         <p class="text-danger">already have an account?</p>

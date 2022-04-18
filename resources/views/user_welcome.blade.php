@@ -25,7 +25,7 @@
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active ml-4">
-                    <a class="nav-link" href="userData.php">Account Details</a>
+                    <a class="nav-link" href="#">Account Details</a>
                 </li>
             </ul>
 

@@ -36,7 +36,7 @@ Route::get("pincode", [pincode::class, "pincode"]);
 
 Route::get("event", [event::class, "event"]);
 
-Route::get("login", [login::class, "login"]);
+Route::get("login", [login::class, "login"])->name('login');
 
 Route::get("welcome/{user}", [welcome::class, "welcome"]);
 
@@ -66,4 +66,3 @@ Route::fallback(function () {
 Route::post("user_data", [getUserData::class, "user_data"]);
 
 Route::view("home","home");
-Route::view("s","show_data");

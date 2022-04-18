@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="nav-item active ml-4">
-                    <a class="nav-link" href="login">Login <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('login') }}">Login <span class="sr-only">(current)</span></a>
                 </li>
 
             </ul>
