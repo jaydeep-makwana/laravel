@@ -36,6 +36,8 @@
     </nav>
 
     <!-- register form -->
+    <!-- mv .env.example .env
+    php artisan key:genrate -->
     <div class="container mt-5 form-bg-user w-100 ">
         <form action="user_data" method="POST" enctype="multipart/form-data">
             <h1 class="text-center">Register</h1>

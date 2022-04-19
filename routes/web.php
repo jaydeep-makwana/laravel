@@ -24,9 +24,8 @@ use App\Http\Controllers\update;
 |
 */
 
-Route::get('/', function () {
-    return view('form.home');
-});
+Route::view("/","form.home");
+ 
 
 Route::get("show", [show_data::class, "show_data1"]);
 Route::get("show/{data}", [show_data::class, "show_data2"]);
