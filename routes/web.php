@@ -25,7 +25,7 @@ use App\Http\Controllers\update;
 */
 
 Route::get('/', function () {
-    return view('form/home');
+    return view('form.home');
 });
 
 Route::get("show", [show_data::class, "show_data1"]);
@@ -65,4 +65,4 @@ Route::fallback(function () {
 
 Route::post("user_data", [getUserData::class, "user_data"]);
 
-Route::view("home","form/home");
+Route::view("home","form.home");

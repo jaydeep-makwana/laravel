@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class login extends Controller
 {
     function login(){
-        return view("form/login");
+        return view("form.login");
     }
 }
