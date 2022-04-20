@@ -37,7 +37,7 @@
 
     <!-- register form -->
 
-    <div class="container mt-5 form-bg-user w-100 ">
+    <div class="container mt-5 form-bg-user bg-light w-100 ">
         <form action="user_data" method="POST" enctype="multipart/form-data">
             <h1 class="text-center">Register</h1>
             <div class="row">
@@ -46,19 +46,19 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="" class="">First Name</label>  
+                        <label for="" class="">First Name</label>
                         <input class="form-control" type="text" name="firstName" value="<?php ?>">
                         <small> * @error('firstName'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
-                        <label for="">Last Name</label>  
+                        <label for="">Last Name</label>
                         <input class="form-control" type="text" name="lastName" value="<?php  ?>">
                         <small> * @error('lastName'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
-                        <label for="">Age</label>  
+                        <label for="">Age</label>
                         <input type="text" class="form-control" name="age" value="<?php  ?>">
                         <small> * @error('age'){{$message}} @enderror </small>
                     </div>
@@ -81,7 +81,7 @@
 
 
                     <div class="form-ckeck">
-                        <label for="department">Department  <small> * @error('department'){{$message}} @enderror </small>
+                        <label for="department">Department <small> * @error('department'){{$message}} @enderror </small>
                             <select name="department" class="form-control" id="department">
                                 <option value="" selected disabled>---Choose Department</option>
                                 <option value="R & D" <?php   ?>>R & D</option>
@@ -90,17 +90,17 @@
                                 <option value="HR" <?php  ?>>HR</option>
                             </select>
                         </label>
-                        
+
                     </div>
 
                     <div class="form-group">
-                        <label for="">Date Of Join</label>  
+                        <label for="">Date Of Join</label>
                         <input type="date" class="form-control" name="date_of_join" value="<?php   ?>">
                         <small> * @error('date_of_join'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
-                        <label for="">Salary</label> 
+                        <label for="">Salary</label>
                         <input type="text" class="form-control" name="salary" value="<?php   ?>">
                         <small> * @error('salary'){{$message}} @enderror </small>
                     </div>
@@ -111,19 +111,19 @@
                 <div class="col-lg-6  ">
 
                     <div class="form-group">
-                        <label for="">Email</label> 
+                        <label for="">Email</label>
                         <input type="text" class="form-control" name="email" value="<?php  ?>">
                         <small> * @error('email'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
-                        <label for="password">Password</label> 
+                        <label for="password">Password</label>
                         <input type="password" class="form-control" name="password" id="password" value="<?php ?>">
                         <small> * @error('password'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
-                        <label for="cPassword">Confirm Password</label> 
+                        <label for="cPassword">Confirm Password</label>
                         <input type="password" class="form-control" name="confirm_password" id="cPassword" value="<?php   ?>">
                         <small> * @error('confirm_password'){{$message}} @enderror </small>
                     </div>
@@ -159,20 +159,22 @@
                     </label>
 
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="exampleFormControlFile1">Upload Your Photo</label> 
                         <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
                         <small> * @error('file'){{$message}} @enderror </small>
+                    </div> -->
+                    <div>
+
+                        <button class="btn btn-primary ">Submit</button>
+                        <button type="reset" class="btn btn-warning">Reset</button>
+
+                        <div class="form-group mt-5 text-center   bg-light ">
+                            <p class="text-danger">already have an account?</p>
+                            <a href="login"> click here</a>
+                        </div>
+
                     </div>
-
-                    <button  class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
-
-                    <div class="form-group mt-5 text-center   bg-light ">
-                        <p class="text-danger">already have an account?</p>
-                        <a href="login"> click here</a>
-                    </div>
-
                 </div>
 
             </div>
