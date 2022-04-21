@@ -18,7 +18,7 @@ class getUserData extends Controller
             "salary" => "required | numeric",
             "email" => "required | email",
             "password" => "required",
-            "confirm_password" => "required",
+            "confirm_password" => "required | required_with:password | same:password",
             "hobby" => "required"
         ]);
         return $records;

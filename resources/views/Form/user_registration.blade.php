@@ -158,7 +158,6 @@
 
                     </label>
 
-
                     <!-- <div class="form-group">
                         <label for="exampleFormControlFile1">Upload Your Photo</label> 
                         <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
