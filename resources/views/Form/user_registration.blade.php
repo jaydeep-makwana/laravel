@@ -36,7 +36,7 @@
     </nav>
 
     <!-- register form -->
-
+ 
     <div class="container mt-5 form-bg-user bg-light w-100 ">
         <form action="user_data" method="POST" enctype="multipart/form-data">
             <h1 class="text-center">Register</h1>
@@ -47,19 +47,19 @@
 
                     <div class="form-group">
                         <label for="" class="">First Name</label>
-                        <input class="form-control" type="text" name="firstName" value="<?php ?>">
+                        <input class="form-control" type="text" name="firstName" value="{{ old('firstName') }}">
                         <small> * @error('firstName'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
                         <label for="">Last Name</label>
-                        <input class="form-control" type="text" name="lastName" value="<?php  ?>">
+                        <input class="form-control" type="text" name="lastName" value="{{ old('lastName') }}">
                         <small> * @error('lastName'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
                         <label for="">Age</label>
-                        <input type="text" class="form-control" name="age" value="<?php  ?>">
+                        <input type="text" class="form-control" name="age" value="{{ old('age') }}">
                         <small> * @error('age'){{$message}} @enderror </small>
                     </div>
 
@@ -95,13 +95,13 @@
 
                     <div class="form-group">
                         <label for="">Date Of Join</label>
-                        <input type="date" class="form-control" name="date_of_join" value="<?php   ?>">
+                        <input type="date" class="form-control" name="date_of_join" value="{{ old('date_of_join') }}">
                         <small> * @error('date_of_join'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
                         <label for="">Salary</label>
-                        <input type="text" class="form-control" name="salary" value="<?php   ?>">
+                        <input type="text" class="form-control" name="salary" value="{{ old('salary') }}">
                         <small> * @error('salary'){{$message}} @enderror </small>
                     </div>
 
@@ -112,26 +112,26 @@
 
                     <div class="form-group">
                         <label for="">Email</label>
-                        <input type="text" class="form-control" name="email" value="<?php  ?>">
+                        <input type="text" class="form-control" name="email" value="{{ old('email') }}">
                         <small> * @error('email'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" id="password" value="<?php ?>">
-                        <small> * @error('password'){{$message}} @enderror </small>
+                        <input type="password" class="form-control" name="Password" id="password" value="{{ old('Password') }}">
+                        <small> * @error('Password'){{$message}} @enderror </small>
                     </div>
 
                     <div class="form-group">
                         <label for="cPassword">Confirm Password</label>
-                        <input type="password" class="form-control" name="confirm_password" id="cPassword" value="<?php   ?>">
+                        <input type="password" class="form-control" name="confirm_password" id="cPassword" value="{{ old('confirm_password') }}">
                         <small> * @error('confirm_password'){{$message}} @enderror </small>
                     </div>
 
-                    <div class="form-check showPassword">
+                    <!-- <div class="form-check showPassword">
                         <input type="checkbox" class="form-check-input" id="showPassword">
                         <label for="showPassword" class="form-check-label">show password</label>
-                    </div>
+                    </div> -->
 
 
                     <label for=""> Hobby <small> * @error('hobby'){{$message}} @enderror </small>
