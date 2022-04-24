@@ -158,6 +158,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        # you can change value of name attribute for error message
+        "email" => "email address"
+    ],
 
 ];

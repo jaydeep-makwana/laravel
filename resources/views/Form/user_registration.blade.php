@@ -47,7 +47,7 @@
 
                     <div class="form-group">
                         <label for="" class="">First Name</label>
-                        <input class="form-control" type="text" name="firstName" value="{{ old('firstName') }}">
+                        <input class="form-control" type="text" name="firstName" value="{{ old('firstName') }}">  <!-- use old function for set old value in input feild -->
                         <small> * @error('firstName'){{$message}} @enderror </small>
                     </div>
 
