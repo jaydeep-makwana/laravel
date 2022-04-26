@@ -24,8 +24,8 @@ use App\Http\Controllers\update;
 |
 */
 
-Route::view("/","form.home");
- 
+Route::view("/", "form.home");
+
 
 Route::get("show", [show_data::class, "show_data1"]);
 Route::get("show/{data}", [show_data::class, "show_data2"]);
@@ -64,4 +64,25 @@ Route::fallback(function () {
 
 Route::post("user_data", [getUserData::class, "user_data"]);
 
-Route::view("home","form.home");
+Route::view("home", "form.home");
+
+Route::get("package", function () {
+    echo "you are skilled employ";
+});
+
+# group middleware
+Route::group(["middleware" => ["group"]], function () {
+
+    Route::get("group", function () {
+        echo 'Welcome to web development group';
+    });
+
+    Route::get('php', function () {
+        echo "php";
+    });
+
+    Route::get('html', function () {
+        echo "html";
+    });
+
+});
