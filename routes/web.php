@@ -64,7 +64,8 @@ Route::fallback(function () {
 
 Route::post("user_data", [getUserData::class, "user_data"]);
 
-Route::view("home", "form.home");
+# route middleware
+Route::view("home", "form.home")->middleware('route_middleware');
 
 Route::get("package", function () {
     echo "you are skilled employ";
@@ -85,4 +86,8 @@ Route::group(["middleware" => ["group_middleware"]], function () {
         echo "<h1>html</h1>";
     });
 
+});
+
+Route::get('routeMidView',function (){
+ echo "This is route middleware";
 });
