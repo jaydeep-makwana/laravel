@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class group
+class phpGroup
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class group
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->name && $request->name === "web_development") {
-            return redirect("group");
+        if ($request->name && $request->name == "web_development") {
+            return redirect("group_view");
         }
         return $next($request);
     }

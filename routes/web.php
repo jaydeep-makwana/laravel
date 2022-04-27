@@ -71,18 +71,18 @@ Route::get("package", function () {
 });
 
 # group middleware
-Route::group(["middleware" => ["group"]], function () {
+Route::group(["middleware" => ["group_middleware"]], function () {
 
-    Route::get("group", function () {
-        echo 'Welcome to web development group';
+    Route::get("group_view", function () {
+        echo '<h1>Welcome to web development group</h1>';
     });
 
     Route::get('php', function () {
-        echo "php";
+        echo "<h1>php</h1>";
     });
 
     Route::get('html', function () {
-        echo "html";
+        echo "<h1>html</h1>";
     });
 
 });

@@ -45,8 +45,8 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-        'group'=>[
-            \App\Http\Middleware\group::class
+        'group_middleware'=>[
+            \App\Http\Middleware\phpGroup::class
         ]
     ];
 
