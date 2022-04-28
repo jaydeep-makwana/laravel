@@ -25,7 +25,7 @@ use App\Http\Controllers\update;
 */
 
 Route::view("/", "form.home");
-
+Route::view("form","main.form");
 
 Route::get("show", [show_data::class, "show_data1"]);
 Route::get("show/{data}", [show_data::class, "show_data2"]);
