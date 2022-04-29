@@ -24,8 +24,8 @@ use App\Http\Controllers\update;
 |
 */
 
-Route::view("/", "form.home");
-Route::view("form","main.form");
+Route::view("form", "form.home");
+Route::view("/","main.home");
 
 Route::get("show", [show_data::class, "show_data1"]);
 Route::get("show/{data}", [show_data::class, "show_data2"]);
@@ -91,3 +91,7 @@ Route::group(["middleware" => ["group_middleware"]], function () {
 Route::get('routeMidView',function (){
  echo "This is route middleware";
 });
+
+Route::view("about","main.about");
+Route::view("signup","main.signup");
+Route::view("signin","main.signin");

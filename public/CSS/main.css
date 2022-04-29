@@ -29,3 +29,17 @@ body {
 .owner {
     margin: auto;
 }
+
+small {
+    color: red;
+}
+
+#signup-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/bunch-twitter-icons-logos-3d-background_125322-9.webp);
+    height: 100vh;
+}
+
+#signin-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/twitter-3.jpg);
+    height: 100vh;
+}
