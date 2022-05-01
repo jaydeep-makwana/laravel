@@ -25,6 +25,7 @@ Route::view("/","main.home");
 Route::view("about","main.about");
 Route::view("signup","main.signup");
 Route::view("signin","main.signin");
+Route::view("dashboard","main.dashboard");
 
 
 
