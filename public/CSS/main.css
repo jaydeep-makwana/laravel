@@ -11,19 +11,31 @@ body {
 }
 
 #main-bg {
-    /* background-image: url(../images/twitter-1.jpg); */
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/twitter-1.jpg);
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
     width: 100vw;
+    background-attachment: fixed;
+}
+
+#signup-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/bunch-twitter-icons-logos-3d-background_125322-9.webp);
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+#signin-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/twitter-3.jpg);
+    height: 100vh;
     background-attachment: fixed;
 }
 
 .para {
     text-align: justify;
-    background-color: rgb(255, 255, 255, 0.5);
-    border-radius: 10px;
+    background: rgb(29, 161, 242, 0.8);
+    border-radius: 1rem;
+    color: white;
 }
 
 .owner {
@@ -31,15 +43,18 @@ body {
 }
 
 small {
-    color: red;
+    color: rgb(255, 0, 0);
+    background-color: white;
 }
 
-#signup-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/bunch-twitter-icons-logos-3d-background_125322-9.webp);
-    height: 100vh;
+.about-bg {}
+
+.form-head {
+    background: rgb(29, 161, 242, 0.8);
+    border-radius: 1rem 1rem 0 0;
 }
 
-#signin-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/twitter-3.jpg);
-    height: 100vh;
+.form-body {
+    background: rgb(29, 161, 242, 0.6);
+    border-radius: 0 0 1rem 1rem;
 }

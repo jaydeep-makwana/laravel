@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Support\Facades\App;
 
 class Kernel extends HttpKernel
 {
@@ -21,7 +22,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \App\Http\Middleware\salary::class,
+        \App\Http\Middleware\car::class,
 
     ];
 
@@ -69,5 +70,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'route_middleware' => \App\Http\Middleware\routeMiddleware::class,
+        "routeMiddleware" => \App\Http\Middleware\dashboard::class
     ];
 }

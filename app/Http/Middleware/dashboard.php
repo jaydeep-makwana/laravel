@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Builder\FallbackBuilder;
 
-class salary
+class dashboard
 {
     /**
      * Handle an incoming request.
@@ -16,8 +17,8 @@ class salary
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->salary && $request->salary > 10000){
-            return redirect("package");
+        if ($request->num && $request->num > 10) {
+            return redirect('/');
         }
         return $next($request);
     }

@@ -6,10 +6,11 @@ use App\Http\Controllers\mobile;
 use App\Http\Controllers\percentage;
 use App\Http\Controllers\show_data;
 use App\Http\Controllers\allInOne;
+use App\Http\Controllers\dbTest;
 use App\Http\Controllers\pincode;
 use App\Http\Controllers\event;
 use App\Http\Controllers\getUserData;
-use App\Http\Controllers\login;
+use App\Http\Controllers\signin;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +27,8 @@ Route::view("/","main.home");
 Route::view("about","main.about");
 Route::view("signup","main.signup");
 Route::view("signin","main.signin");
-Route::view("dashboard","main.dashboard");
-Route::post("login",[login::class,"loginDetails"]);
+Route::view("dashboard","main.dashboard")->middleware("routeMiddleware");
+Route::post("login",[signin::class,"loginDetails"]);
 
 
 
@@ -60,9 +61,7 @@ Route::post("user_data", [getUserData::class, "user_data"]);
 
 
 
-Route::get("package", function () {
-    echo "you are skilled employ";
-});
+Route::view("car_details", "car");
 
 
 # group middleware
@@ -82,6 +81,8 @@ Route::group(["middleware" => ["group_middleware"]], function () {
     
 });
 
+# fetch data from database
+Route::get("dbRecords",[dbTest::class,"fetchRecord"]);
 
 Route::fallback(function () {
     return view('Default');

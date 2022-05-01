@@ -13,7 +13,7 @@
     <div class="container text-center mt-5">
 
         <h1 class="bg-warning p-2 border">Default Page</h1>
-        <h2 class="bg-danger text-white p-2 border">Your Search Page Dose Not Exist OR You Forget Variable</h2>
+        <h2 class="bg-danger text-white p-2 border">Your Search Page Dose Not Exist OR You Forgot Variable</h2>
     </div>
 
 </body>

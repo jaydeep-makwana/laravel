@@ -11,38 +11,44 @@
 </head>
 
 
-<body>
+<body id="signin-bg">
 
-    <div class="container-fluid p-0" id="signin-bg">
+    <div class="container-fluid p-0 text-white">
         @include('main.navbar')
 
-        <div class="col-lg-4 form-bg-user bg-light mt-5 mx-auto">
+        <div class="col-lg-4  mt-5 mx-auto">
 
-            <form action="login" method="post" >
+            <form action="login" method="post">
+                <div class="form-head ">
 
-                <h1 class="text-center p-3">Sign In</h1>
-                @csrf
-                <div class="form-group">
-                    <label for="" class="">Email</label>
-                    <input class="form-control" type="text" name="email" value="">
+                    <h1 class="text-center p-1 m-0">Sign In</h1>
                 </div>
+                <div class="form-body   p-4">
+                    @csrf
 
-                <div class="form-group">
-                    <label for="">Password</label>
-                    <input class="form-control" type="password" id="password" name="password" value="">
-                </div>
+                    <div class="form-group">
+                        <label for="" class="">Email</label>
+                        <input class="form-control" type="text" name="email" value="">
+                        <small>@error("email"){{$message}}@enderror</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input class="form-control" type="password" id="password" name="password" value="">
+                        <small>@error("password"){{$message}}@enderror</small>
+                    </div>
 
-                <!-- <div class="form-check showPassword">
+                    <!-- <div class="form-check showPassword">
                     <input type="checkbox" class="form-check-input" id="signInPass">
                     <label for="signInPass" class="form-check-label">show password</label>
-                </div> -->
+                    </div> -->
 
-                <input type="submit" value='Sign In' class="btn btn-primary">
-                 
+                    <input type="submit" value='Sign In' class="btn btn-primary">
 
-                <div class="form-group mt-5 text-center bg-light ">
-                    <p class="text-danger"> don't have have an account </p>
-                    <a href="signup"> click here</a>
+
+                    <div class="form-group mt-5 text-center bg-light ">
+                        <p class="text-danger"> don't have have an account </p>
+                        <a href="signup"> click here</a>
+                    </div>
                 </div>
 
             </form>

@@ -10,10 +10,10 @@
     <title>About</title>
 </head>
 
-<body>
+<body id="main-bg">
 
 
-    <div class="container-fluid p-0" id="main-bg">
+    <div class="container-fluid p-0">
        @include('main.navbar')
 
         <h1 class="text-white text-center mt-5">Welcome To Twitter</h1>
