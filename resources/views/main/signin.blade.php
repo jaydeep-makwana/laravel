@@ -18,10 +18,10 @@
 
         <div class="col-lg-4 form-bg-user bg-light mt-5 mx-auto">
 
-            <form>
+            <form action="login" method="post" >
 
                 <h1 class="text-center p-3">Sign In</h1>
-
+                @csrf
                 <div class="form-group">
                     <label for="" class="">Email</label>
                     <input class="form-control" type="text" name="email" value="">
@@ -32,12 +32,13 @@
                     <input class="form-control" type="password" id="password" name="password" value="">
                 </div>
 
-                <div class="form-check showPassword">
+                <!-- <div class="form-check showPassword">
                     <input type="checkbox" class="form-check-input" id="signInPass">
                     <label for="signInPass" class="form-check-label">show password</label>
-                </div>
+                </div> -->
 
-                <input type="submit" name="submit" value='Log in' class="btn btn-primary">
+                <input type="submit" value='Sign In' class="btn btn-primary">
+                 
 
                 <div class="form-group mt-5 text-center bg-light ">
                     <p class="text-danger"> don't have have an account </p>

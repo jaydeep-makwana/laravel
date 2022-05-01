@@ -144,7 +144,7 @@
                     </div> -->
                         <div>
 
-                            <button class="btn btn-primary ">Submit</button>
+                            <button class="btn btn-primary ">Sign UP</button>
                             <button type="reset" class="btn btn-warning">Reset</button>
 
                             <div class="form-group mt-5 text-center   bg-light ">

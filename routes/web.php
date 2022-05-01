@@ -9,6 +9,7 @@ use App\Http\Controllers\allInOne;
 use App\Http\Controllers\pincode;
 use App\Http\Controllers\event;
 use App\Http\Controllers\getUserData;
+use App\Http\Controllers\login;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::view("about","main.about");
 Route::view("signup","main.signup");
 Route::view("signin","main.signin");
 Route::view("dashboard","main.dashboard");
-
+Route::post("login",[login::class,"loginDetails"]);
 
 
 
