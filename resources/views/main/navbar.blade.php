@@ -1,5 +1,5 @@
  <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark p-0" id="nav">
+ <nav class="navbar navbar-expand-lg p-0" id="nav">
      <a class="navbar-brand ml-3" href="/"><img src="{{ asset('images/twitter.png')}}" width="50px" alt="">
      </a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,7 +1,14 @@
 #nav {
     background-color: #1da1f2;
-    color: white;
     font-size: large;
+}
+
+a {
+    color: rgb(255, 255, 255);
+}
+
+a:hover {
+    color: rgb(0, 0, 0);
 }
 
 html,
@@ -46,8 +53,6 @@ small {
     color: rgb(255, 0, 0);
     background-color: white;
 }
-
-.about-bg {}
 
 .form-head {
     background: rgb(29, 161, 242, 0.8);
