@@ -99,6 +99,12 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="">Mobile No.</label>
+                            <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}">
+                            <small>@error('mobile'){{$message}} @enderror </small>
+                        </div>
+
+                        <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" name="Password" id="password" value="{{ old('Password') }}">
                             <small>@error('Password'){{$message}} @enderror </small>
@@ -152,7 +158,7 @@
 
                             <div class="form-group mt-5 text-center   bg-light ">
                                 <p class="text-danger">already have an account?</p>
-                                <a href="signin"> click here</a>
+                                <a href="signin" class="text-primary"> click here</a>
                             </div>
 
                         </div>

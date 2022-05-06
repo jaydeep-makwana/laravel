@@ -19,7 +19,7 @@ class dbTest extends Controller
         // DB::delete("DELETE FROM students WHERE `id`=?",[19]);
 
         # fetch records
-        $users = DB::select("SELECT * FROM students");
+        $users = DB::select("SELECT * FROM user");
         return view("main.admin_dashboard",["records"=>$users]);
         
     }

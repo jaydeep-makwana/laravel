@@ -145,6 +145,9 @@ return [
         'age' => [
             'regex' => 'The :attribute must only contain number',
         ],
+        'mobile' => [
+            'regex' => 'The :attribute number must be contain 10 digit',
+        ]
     ],
 
     /*

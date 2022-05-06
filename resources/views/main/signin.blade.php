@@ -47,7 +47,7 @@
 
                     <div class="form-group mt-5 text-center bg-light ">
                         <p class="text-danger"> don't have have an account </p>
-                        <a href="signup"> click here</a>
+                        <a href="signup" class="text-primary"> click here</a>
                     </div>
                 </div>
 

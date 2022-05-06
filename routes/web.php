@@ -29,6 +29,7 @@ Route::view("signup","main.signup");
 Route::view("signin","main.signin");
 Route::view("dashboard","main.dashboard")->middleware("routeMiddleware");
 Route::post("login",[signin::class,"loginDetails"]);
+Route::get("dbRecords",[dbTest::class,"fetchRecord"]);             # fetch data from database
 
 
 
@@ -81,8 +82,6 @@ Route::group(["middleware" => ["group_middleware"]], function () {
     
 });
 
-# fetch data from database
-Route::get("dbRecords",[dbTest::class,"fetchRecord"]);
 
 Route::fallback(function () {
     return view('Default');
