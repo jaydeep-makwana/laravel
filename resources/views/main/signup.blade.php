@@ -28,35 +28,35 @@
                         @csrf
 
                         <div class="form-group">
-                            <label for="" class="">First Name</label>
-                            <input class="form-control" type="text" name="firstName" value="{{ old('firstName') }}"> <!-- use old function for set old value in input feild -->
+                            <label for="first_name" class="">First Name</label>
+                            <input class="form-control" type="text" name="firstName" id="first_name" value="{{ old('firstName') }}"> <!-- use old function for set old value in input feild -->
                             <small>@error('firstName'){{$message}} @enderror </small>
                         </div>
 
                         <div class="form-group">
-                            <label for="">Last Name</label>
-                            <input class="form-control" type="text" name="lastName" value="{{ old('lastName') }}">
+                            <label for="last_name">Last Name</label>
+                            <input class="form-control" type="text" name="lastName" id="last_name" value="{{ old('lastName') }}">
                             <small>@error('lastName'){{$message}} @enderror </small>
                         </div>
 
                         <div class="form-group">
-                            <label for="">Age</label>
-                            <input type="text" class="form-control" name="age" value="{{ old('age') }}">
+                            <label for="age">Age</label>
+                            <input type="text" class="form-control" name="age" id="age" value="{{ old('age') }}">
                             <small>@error('age'){{$message}} @enderror </small>
                         </div>
 
 
                         <label for="">Gender <small>@error('gender'){{$message}} @enderror </small>
                             <div class="form-check">
-                                <label for="" class="form-check-label">
-                                    <input type="radio" value="male" class="form-check-input" name="gender" <?php  ?>> male
+                                <label for="male" class="form-check-label">
+                                    <input type="radio" value="male" class="form-check-input" id="male" name="gender" <?php  ?>> male
                                 </label>
                             </div>
                             <div class="form-check">
 
-                                <label for="" class="form-check-label">
+                                <label for="female" class="form-check-label">
 
-                                    <input type="radio" value="female" class="form-check-input" name="gender" <?php  ?>> female
+                                    <input type="radio" value="female" class="form-check-input" id="female" name="gender" <?php  ?>> female
                                 </label>
                             </div>
                         </label>
@@ -76,14 +76,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Date Of Join</label>
-                            <input type="date" class="form-control" name="date_of_join" value="{{ old('date_of_join') }}">
+                            <label for="doj">Date Of Join</label>
+                            <input type="date" class="form-control" name="date_of_join" id="doj" value="{{ old('date_of_join') }}">
                             <small>@error('date_of_join'){{$message}} @enderror </small>
                         </div>
 
                         <div class="form-group">
-                            <label for="">Salary</label>
-                            <input type="text" class="form-control" name="salary" value="{{ old('salary') }}">
+                            <label for="salary">Salary</label>
+                            <input type="text" class="form-control" name="salary" id="salary" value="{{ old('salary') }}">
                             <small>@error('salary'){{$message}} @enderror </small>
                         </div>
 
@@ -93,14 +93,14 @@
                     <div class="col-lg-6  ">
 
                         <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="text" class="form-control" name="email" value="{{ old('email') }}">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}">
                             <small>@error('email'){{$message}} @enderror </small>
                         </div>
 
                         <div class="form-group">
-                            <label for="">Mobile No.</label>
-                            <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}">
+                            <label for="mobile">Mobile No.</label>
+                            <input type="text" class="form-control" name="mobile" id="mobile" value="{{ old('mobile') }}">
                             <small>@error('mobile'){{$message}} @enderror </small>
                         </div>
 
@@ -125,23 +125,23 @@
                         <label for=""> Hobby <small>@error('hobby'){{$message}} @enderror </small>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="" value="reading" <?php  ?>>
-                                <label for="hobby" class="form-check-label">reading</label>
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="reading" value="reading" <?php  ?>>
+                                <label for="reading" class="form-check-label">Reading</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="" value="dancing" <?php  ?>>
-                                <label for="hobby" class="form-check-label">Dancing</label>
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="dancing" value="dancing" <?php  ?>>
+                                <label for="dancing" class="form-check-label">Dancing</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="" value="programming" <?php   ?>>
-                                <label for="hobby" class="form-check-label">Programming</label>
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="programming" value="programming" <?php   ?>>
+                                <label for="programming" class="form-check-label">Programming</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="" value="gaming" <?php  ?>>
-                                <label for="hobby" class="form-check-label">Gaming</label>
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="gaming" value="gaming" <?php  ?>>
+                                <label for="gaming" class="form-check-label">Gaming</label>
                             </div>
 
                         </label>

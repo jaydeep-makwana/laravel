@@ -23,16 +23,16 @@
 
                     <h1 class="text-center p-1 m-0">Sign In</h1>
                 </div>
-                <div class="form-body   p-4">
+                <div class="form-body p-4">
                     @csrf
 
                     <div class="form-group">
-                        <label for="" class="">Email</label>
-                        <input class="form-control" type="text" name="email" value="">
+                        <label for="email" class="">Email</label>
+                        <input class="form-control" type="text" name="email" id="email" value="">
                         <small>@error("email"){{$message}}@enderror</small>
                     </div>
                     <div class="form-group">
-                        <label for="">Password</label>
+                        <label for="password">Password</label>
                         <input class="form-control" type="password" id="password" name="password" value="">
                         <small>@error("password"){{$message}}@enderror</small>
                     </div>
