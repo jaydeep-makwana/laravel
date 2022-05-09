@@ -11,6 +11,7 @@ use App\Http\Controllers\pincode;
 use App\Http\Controllers\event;
 use App\Http\Controllers\getUserData;
 use App\Http\Controllers\signin;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,8 @@ Route::view("dashboard","main.dashboard")->middleware("routeMiddleware");
 Route::post("login",[signin::class,"loginDetails"]);
 Route::get("dbRecords",[dbTest::class,"fetchRecord"]);             # fetch data from database
 
-
+# fetch data using model
+Route::get('model',[StudentController::class, 'getData']);
 
 Route::get("show", [show_data::class, "show_data1"]);
 Route::get("show/{data}", [show_data::class, "show_data2"]);
