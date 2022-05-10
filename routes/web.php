@@ -6,6 +6,7 @@ use App\Http\Controllers\mobile;
 use App\Http\Controllers\percentage;
 use App\Http\Controllers\show_data;
 use App\Http\Controllers\allInOne;
+use App\Http\Controllers\ApiData;
 use App\Http\Controllers\dbTest;
 use App\Http\Controllers\pincode;
 use App\Http\Controllers\event;
@@ -35,6 +36,8 @@ Route::get("dbRecords",[dbTest::class,"fetchRecord"]);             # fetch data 
 # fetch data using model
 Route::get('model',[StudentController::class, 'getData']);
 
+# fetch data from api
+Route::get('http',[ApiData::class,'fetchApi']);
 Route::get("show", [show_data::class, "show_data1"]);
 Route::get("show/{data}", [show_data::class, "show_data2"]);
 
