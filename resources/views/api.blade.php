@@ -51,7 +51,7 @@
                     <th colspan="3">Text Message</th>
                 </tr>
                 <tr>
-                    <td colspan="2">{{$api_data_1['support']['url']}}</td>
+                    <td colspan="2"><a href="{{$api_data_1['support']['url']}}" target="_main">{{$api_data_1['support']['url']}}</a></td>
                     <td colspan="3">{{$api_data_1['support']['text']}}</td>
                 </tr>
             </tbody>
