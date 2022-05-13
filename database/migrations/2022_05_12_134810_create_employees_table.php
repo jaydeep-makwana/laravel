@@ -15,16 +15,16 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id('emp_id');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('first_name',50);
+            $table->string('last_name',50);
             $table->integer('age');
             $table->string('gender');
             $table->string('department');
             $table->date('date_of_join');
             $table->integer('salary');
-            $table->string('email');
-            $table->integer('mobile');
-            $table->string('password');
+            $table->string('email',50);
+            $table->bigInteger('mobile');
+            $table->string('password',50);
             $table->string('hobby');
             $table->timestamps();
         });
