@@ -7,20 +7,22 @@ use Illuminate\Support\Facades\DB;
 
 class dbTest extends Controller
 {
-    function fetchRecord(){
+    function fetchRecord()
+    {
 
         # insert record
-        // DB::insert("INSERT INTO students (`name`,`standard`,`age`,`rollNo`) VALUES (?,?,?,?)",['Jaydeep',11,16,1]);
+        // DB::insert("INSERT INTO employees (`name`,`standard`,`age`,`rollNo`) VALUES (?,?,?,?)",['Jaydeep',11,16,1]);
 
         # update record
-        // DB::update("UPDATE students SET `name` = 'jack', `standard` = 12, `age` = 22, `rollNo` = 404 WHERE `id` = ?",[1]);
+        // DB::update("UPDATE employees SET `name` = 'jack', `standard` = 12, `age` = 22, `rollNo` = 404 WHERE `id` = ?",[1]);
 
         # delete record
-        // DB::delete("DELETE FROM students WHERE `id`=?",[19]);
+        // DB::delete("DELETE FROM employees WHERE `id`=?",[19]);
 
-        # fetch records
-        // $users = DB::select("SELECT * FROM user");
+        # fetch records using query
+        // $users = DB::select("SELECT * FROM employees");
         // return view("main.admin_dashboard",["records"=>$users]);
+
         
     }
 }

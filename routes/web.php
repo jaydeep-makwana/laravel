@@ -8,11 +8,11 @@ use App\Http\Controllers\show_data;
 use App\Http\Controllers\allInOne;
 use App\Http\Controllers\ApiData;
 use App\Http\Controllers\dbTest;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\pincode;
 use App\Http\Controllers\event;
 use App\Http\Controllers\getUserData;
 use App\Http\Controllers\signin;
-use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ Route::post("login",[signin::class,"loginDetails"]);
 Route::get("dbRecords",[dbTest::class,"fetchRecord"]);             # fetch data from database
 
 # fetch data using model
-Route::get('model',[StudentController::class, 'getData']);
+Route::get('admin_dashboard',[EmployeeController::class,"employee_records"]);
 
 # fetch data from api
 Route::get('http',[ApiData::class,'fetchApi']);

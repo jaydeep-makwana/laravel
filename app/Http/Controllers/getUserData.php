@@ -64,6 +64,6 @@ class getUserData extends Controller
             "hobby" => $hobby,
         ]);
 
-        return redirect("dbRecords");
+        return redirect("admin_dashboard");
     }
 }

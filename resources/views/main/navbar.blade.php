@@ -18,7 +18,7 @@
                  <a class="nav-link" href="{{ url('about') }}">About </a>
              </li>
              <li class="nav-item active ml-3">
-                 <a class="nav-link" href="{{ url('dbRecords') }}">DB_Records </a>
+                 <a class="nav-link" href="{{ url('admin_dashboard') }}">DB_Records </a>
              </li>
          </ul>
 

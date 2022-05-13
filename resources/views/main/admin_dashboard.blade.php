@@ -41,7 +41,7 @@
         <tbody>
             @foreach($records as $record)
             <tr>
-                <td class="bg-light">{{$record->id}}</td>
+                <td class="bg-light">{{$record->emp_id}}</td>
                 <td class="bg-light">{{$record->first_name}}</td>
                 <td class="bg-light">{{$record->last_name}}</td>
                 <td class="bg-light">{{$record->age}}</td>
