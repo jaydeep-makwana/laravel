@@ -25,19 +25,46 @@ use App\Http\Controllers\signin;
 |
 */
 
-Route::view("/","main.home");
-Route::view("about","main.about");
-Route::view("signup","main.signup");
-Route::view("signin","main.signin");
-Route::view("dashboard","main.dashboard")->middleware("routeMiddleware");
-Route::post("login",[signin::class,"loginDetails"]);
-Route::get("dbRecords",[dbTest::class,"fetchRecord"]);             # fetch data from database
+Route::view("/", "main.home");
+Route::view("signup", "main.signup");
+
+# redirect user to dashboard if user alrady login
+Route::get("signin", function () {
+    if (session()->has('email')) {
+        return view('main.dashboard');
+    }
+    return view('main.signin');
+});
+
+
+# redirect to login page if user not logged
+Route::get("dashboard",function(){
+    if (!session()->has('email')) {
+        return view('main.signin');
+    }
+    return view('main.dashboard');
+});
+
+Route::post("user_data", [getUserData::class, "user_data"]);
+Route::post("login", [signin::class, "loginDetails"]);
+Route::view("about", "main.about");
+
+Route::get("dbRecords", [dbTest::class, "fetchRecord"]);             # fetch data from database
 
 # fetch data using model
-Route::get('admin_dashboard',[EmployeeController::class,"employee_records"]);
+Route::get('admin_dashboard', [EmployeeController::class, "employee_records"]);
+
+# sign out user
+Route::get('signout', function () {
+    if (session()->has('email')) {
+        session()->pull('email');
+    }
+    return redirect('signin');
+});
+
 
 # fetch data from api
-Route::get('http',[ApiData::class,'fetchApi']);
+Route::get('http', [ApiData::class, 'fetchApi']);
 Route::get("show", [show_data::class, "show_data1"]);
 Route::get("show/{data}", [show_data::class, "show_data2"]);
 
@@ -63,7 +90,6 @@ Route::get("mobile/{phone}", [mobile::class, "getDetails"]);
 Route::get("interest/{amount}/{interest}/{duration}", [interest::class, "clcInt"]);
 
 
-Route::post("user_data", [getUserData::class, "user_data"]);
 
 
 
@@ -76,15 +102,14 @@ Route::group(["middleware" => ["group_middleware"]], function () {
     Route::get("group_view", function () {
         echo '<h1>Welcome to web development group</h1>';
     });
-    
+
     Route::get('php', function () {
         echo "<h1>php</h1>";
     });
-    
+
     Route::get('html', function () {
         echo "<h1>html</h1>";
     });
-    
 });
 
 

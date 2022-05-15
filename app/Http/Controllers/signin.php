@@ -11,6 +11,8 @@ class signin extends Controller
            "email"=>"required",
            "password"=>"required"
         ]);
-        return $data;
+      //   return $data['email'];
+      $data->session()->put('email',$data['email']);
+        return redirect('dashboard');
      }
 }
