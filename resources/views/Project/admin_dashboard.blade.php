@@ -11,13 +11,41 @@
 </head>
 
 <body>
-    @include("main.navbar")
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg p-0" id="nav">
+        <a class="navbar-brand ml-3" href="/"><img src="{{ asset('images/twitter.png')}}" width="50px" alt="">
+        </a>
+        <div class="navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+
+        <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto mr-3 text-white">
+                <li class="nav-item active ml-3">
+                    <h4>{{session('admin')}}</h4>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ml-auto mr-3">
+                <li class="nav-item active ml-3">
+                    <a class="nav-link" href="{{ url('logout') }}">Sign out</a>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </nav>
 
     <table class="table text-center">
 
         <thead>
             <tr class="bg-warning">
-                <th  colspan="12" >
+                <th colspan="12">
                     <h1>User's Records</h1>
                 </th>
             </tr>
@@ -58,7 +86,7 @@
         </tbody>
 
     </table>
-    
+
 </body>
 
 </html>

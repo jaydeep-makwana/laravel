@@ -24,22 +24,7 @@
 
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark    ">
-        <img src="images/./ms.PNG" width="80" alt="can't load image">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse h4 mt-2" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active ml-4 ">
-                    <a class="nav-link" href="#">Programming</a>
-                </li>
-            </ul>
-        </div>
-
-
-    </nav>
+ 
  
     <div class="container-fluid  mx-auto text-center bg-dark w-100 h-100">
         <div class="row p-5">

@@ -14,7 +14,7 @@
 
 
     <div class="container-fluid p-0">
-       @include('main.navbar')
+       @include('Project.navbar')
 
         <h1 class="text-white text-center mt-5">Welcome To Twitter</h1>
 

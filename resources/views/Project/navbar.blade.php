@@ -1,5 +1,5 @@
  <!-- Navbar -->
- <nav class="navbar navbar-expand-lg p-0" id="nav">
+ <nav class="navbar navbar-expand-lg p-0 text-center" id="nav">
      <a class="navbar-brand ml-3" href="/"><img src="{{ asset('images/twitter.png')}}" width="50px" alt="">
      </a>
      <div class="navbar-dark">
@@ -20,13 +20,13 @@
                  <a class="nav-link" href="{{ url('about') }}">About </a>
              </li>
              <li class="nav-item active ml-3">
-                 <a class="nav-link" href="{{ url('admin_dashboard') }}">DB_Records </a>
+                 <a class="nav-link" href="{{ url('login') }}">Sign in </a>
              </li>
          </ul>
 
          <ul class="navbar-nav ml-3 mr-3">
-             <li class="nav-item active">
-                 <a class="nav-link" href="{{ url('signin') }}">Sign in </a>
+             <li class="nav-item active  ">
+                 <a class="nav-link button border" href="{{ url('login') }}">Dashboard </a>
              </li>
 
          </ul>

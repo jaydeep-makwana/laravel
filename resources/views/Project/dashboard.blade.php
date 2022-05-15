@@ -28,7 +28,7 @@
                  
                 <ul class="navbar-nav ml-auto mr-3">
                     <li class="nav-item active ml-3">
-                        <a class="nav-link" href="{{ url('signout') }}">Sign out</a>
+                        <a class="nav-link" href="{{ url('logout') }}">Sign out</a>
                     </li>
 
                 </ul>

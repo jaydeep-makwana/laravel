@@ -14,7 +14,7 @@
 <body id="signup-bg">
 
     <div class="container-fluid p-0 text-white">
-        @include('main.navbar')
+        @include('Project.navbar')
         <!-- register form -->
         <div class="container mt-5 w-100">
             <form action="user_data" method="POST" enctype="multipart/form-data">
