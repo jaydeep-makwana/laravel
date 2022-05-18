@@ -89,7 +89,7 @@ Route::group(["middleware" => ["group_middleware"]], function () {
     });
 });
 
-# if route or variable undifind then show default page
+# => if route or variable undifind then show default page
 Route::fallback(function () {
     return view('Practice.Default');
 });
