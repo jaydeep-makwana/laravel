@@ -45,7 +45,7 @@
 
         <thead>
             <tr class="bg-warning">
-                <th colspan="12">
+                <th colspan="13">
                     <h1>User's Records</h1>
                 </th>
             </tr>
@@ -63,6 +63,7 @@
                 <th class="bg-dark text-white">Mobile No.</th>
                 <th class="bg-dark text-white">Password</th>
                 <th class="bg-dark text-white">Hobby</th>
+                <th class="bg-dark text-white">Photo</th>
             </tr>
         </thead>
 
@@ -81,12 +82,13 @@
                 <td class="bg-light">{{$record->mobile}}</td>
                 <td class="bg-light">{{$record->password}}</td>
                 <td class="bg-light">{{$record->hobby}}</td>
+                <td class="bg-light">photo </td>
             </tr>
             @endforeach
         </tbody>
 
     </table>
-
+ 
 </body>
 
 </html>

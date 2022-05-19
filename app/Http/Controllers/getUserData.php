@@ -26,10 +26,15 @@ class getUserData extends Controller
                 }
             }],                                             # Custom Validation Rule using Closures
             "confirm_password" => "required | same:Password",
-            "hobby" => "required"
+            "hobby" => "required",
+            "image" => "required"
         ]);
-
+        
         $hobby = implode(", ", $records->input('hobby'));
+
+        $target_dir = "../App/";
+        $img_path = $target_dir . basename($_FILES['image']['name']);
+            move_uploaded_file($_FILES['image']['tmp_name'],$img_path);
 
         # insert data using query
         // DB::insert(
@@ -62,6 +67,7 @@ class getUserData extends Controller
             "mobile" => $records->input('mobile'),
             "password" => $records->input('Password'),
             "hobby" => $hobby,
+            "image" => $img_path,
         ]);
 
         return redirect("login");

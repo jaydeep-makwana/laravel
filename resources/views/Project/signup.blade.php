@@ -49,14 +49,14 @@
                         <label for="">Gender <small>@error('gender'){{$message}} @enderror </small>
                             <div class="form-check">
                                 <label for="male" class="form-check-label">
-                                    <input type="radio" value="male" class="form-check-input" id="male" name="gender" @if(old('gender') == 'male' ) checked @endif> male
+                                    <input type="radio" value="male" class="form-check-input" id="male" name="gender" @if(old('gender')=='male' ) checked @endif> male
                                 </label>
                             </div>
                             <div class="form-check">
 
                                 <label for="female" class="form-check-label">
 
-                                    <input type="radio" value="female" class="form-check-input" id="female" name="gender" @if(old('gender') == 'female' ) checked @endif> female
+                                    <input type="radio" value="female" class="form-check-input" id="female" name="gender" @if(old('gender')=='female' ) checked @endif> female
                                 </label>
                             </div>
                         </label>
@@ -117,9 +117,9 @@
                         </div>
 
                         <!-- <div class="form-check showPassword">
-                        <input type="checkbox" class="form-check-input" id="showPassword">
-                        <label for="showPassword" class="form-check-label">show password</label>
-                    </div> -->
+                            <input type="checkbox" class="form-check-input" id="showPassword">
+                            <label for="showPassword" class="form-check-label">show password</label>
+                        </div> -->
 
 
                         <label for=""> Hobby <small>@error('hobby'){{$message}} @enderror </small>
@@ -146,11 +146,12 @@
 
                         </label>
 
-                        <!-- <div class="form-group">
-                        <label for="exampleFormControlFile1">Upload Your Photo</label> 
-                        <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
-                        <small> * @error('file'){{$message}} @enderror </small>
-                    </div> -->
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Upload Your Photo</label>
+                            <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                            <small>  @error('image'){{$message}} @enderror </small>
+                        </div>
+
                         <div>
 
                             <button class="btn btn-primary ">Sign UP</button>
@@ -158,7 +159,7 @@
 
                             <div class="form-group mt-5 text-center   bg-light ">
                                 <p class="text-danger">already have an account?</p>
-                                <a href="signin" class="text-primary"> click here</a>
+                                <a href="login" class="text-primary"> click here</a>
                             </div>
 
                         </div>
