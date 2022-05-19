@@ -25,8 +25,14 @@
         <div class="collapse navbar-collapse  " id="navbarSupportedContent">
 
             <ul class="navbar-nav mr-auto mr-3 text-white">
-
+                <li class="nav-item active ml-3">
+                    <a class="nav-link" href="{{ asset('/') }}">Home </a>
+                </li>
+                <li class="nav-item active ml-3">
+                    <a class="nav-link" href="{{ url('about') }}">About </a>
+                </li>
             </ul>
+
             <ul class="navbar-nav ml-auto mr-3">
                 <li class="nav-item active ml-3">
                     <a class="btn btn-danger " href="{{ url('logout') }}">Sign out</a>
@@ -46,7 +52,7 @@
                     <th colspan="13">
                         <h1>{{session('admin')}}</h1>
                     </th>
-                   
+
                 </tr>
 
                 <tr>
@@ -81,7 +87,7 @@
                     <td class="bg-light">{{$record->mobile}}</td>
                     <td class="bg-light">{{$record->password}}</td>
                     <td class="bg-light">{{$record->hobby}}</td>
-                    <td class="bg-light"><img src="{{ asset($record->image) }}" width="100" height="100" alt=""> </td>
+                    <td class="bg-light"><img src="{{ asset($record->image) }}" width="100" height="75" alt=""> </td>
                 </tr>
                 @endforeach
             </tbody>

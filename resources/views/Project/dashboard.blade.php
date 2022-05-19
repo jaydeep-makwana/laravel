@@ -25,7 +25,17 @@
             </div>
 
             <div class="collapse navbar-collapse  " id="navbarSupportedContent">
-                 
+
+                <ul class="navbar-nav mr-auto ml-3">
+                    <li class="nav-item active ml-3">
+                        <a class="nav-link" href="{{ asset('/') }}">Home </a>
+                    </li>
+                    <li class="nav-item active ml-3">
+                        <a class="nav-link" href="{{ url('about') }}">About </a>
+                    </li>
+                </ul>
+
+
                 <ul class="navbar-nav ml-auto mr-3">
                     <li class="nav-item active ml-3">
                         <a class="nav-link" href="{{ url('logout') }}">Sign out</a>
