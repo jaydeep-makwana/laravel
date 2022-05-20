@@ -12,7 +12,7 @@ class Login extends Controller
          "email" => "required",
          "password" => "required"
       ]);
-
+      
       if ($data['email'] === 'admin' && $data['password'] === '123') {
           $data->session()->put('admin',"Hello Admin");
           return redirect('admin_dashboard');
