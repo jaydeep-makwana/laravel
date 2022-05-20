@@ -29,12 +29,14 @@ class getUserData extends Controller
             "hobby" => "required",
             "image" => "required"
         ]);
-        
-        $hobby = implode(", ", $records->input('hobby'));
 
-        $target_dir = "../App/";
-        $img_path = $target_dir . basename($_FILES['image']['name']);
-            move_uploaded_file($_FILES['image']['tmp_name'],$img_path);
+        $hobby = implode(", ", $records->input('hobby'));
+        $fileName = $records->file('image')->getClientOriginalName();
+        $img_path = $records->file('image')->move('photos', $fileName);
+
+        // $target_dir = "../App/";
+        // $img_path = $target_dir . basename($_FILES['image']['name']);
+        //     move_uploaded_file($_FILES['image']['tmp_name'],$img_path);
 
         # insert data using query
         // DB::insert(

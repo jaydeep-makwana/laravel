@@ -25,14 +25,11 @@
         <div class="collapse navbar-collapse  " id="navbarSupportedContent">
 
             <ul class="navbar-nav mr-auto mr-3 text-white">
-                <li class="nav-item active ml-3">
-                    <h4>{{session('admin')}}</h4>
-                </li>
 
             </ul>
             <ul class="navbar-nav ml-auto mr-3">
                 <li class="nav-item active ml-3">
-                    <a class="nav-link" href="{{ url('logout') }}">Sign out</a>
+                    <a class="btn btn-danger " href="{{ url('logout') }}">Sign out</a>
                 </li>
 
             </ul>
@@ -40,55 +37,58 @@
 
         </div>
     </nav>
+    <div class="table-responsive">
 
-    <table class="table text-center">
+        <table class="table  text-center">
 
-        <thead>
-            <tr class="bg-warning">
-                <th colspan="13">
-                    <h1>User's Records</h1>
-                </th>
-            </tr>
+            <thead>
+                <tr class="bg-warning">
+                    <th colspan="13">
+                        <h1>{{session('admin')}}</h1>
+                    </th>
+                   
+                </tr>
 
-            <tr>
-                <th class="bg-dark text-white">Id</th>
-                <th class="bg-dark text-white">First Name</th>
-                <th class="bg-dark text-white">Last Name</th>
-                <th class="bg-dark text-white">Age</th>
-                <th class="bg-dark text-white">Gender</th>
-                <th class="bg-dark text-white">Department</th>
-                <th class="bg-dark text-white">Date Of Join</th>
-                <th class="bg-dark text-white">Salary</th>
-                <th class="bg-dark text-white">Email</th>
-                <th class="bg-dark text-white">Mobile No.</th>
-                <th class="bg-dark text-white">Password</th>
-                <th class="bg-dark text-white">Hobby</th>
-                <th class="bg-dark text-white">Photo</th>
-            </tr>
-        </thead>
+                <tr>
+                    <th class="bg-dark text-white">Id</th>
+                    <th class="bg-dark text-white">First Name</th>
+                    <th class="bg-dark text-white">Last Name</th>
+                    <th class="bg-dark text-white">Age</th>
+                    <th class="bg-dark text-white">Gender</th>
+                    <th class="bg-dark text-white">Department</th>
+                    <th class="bg-dark text-white">Date Of Join</th>
+                    <th class="bg-dark text-white">Salary</th>
+                    <th class="bg-dark text-white">Email</th>
+                    <th class="bg-dark text-white">Mobile No.</th>
+                    <th class="bg-dark text-white">Password</th>
+                    <th class="bg-dark text-white">Hobby</th>
+                    <th class="bg-dark text-white">Photo</th>
+                </tr>
+            </thead>
 
-        <tbody>
-            @foreach($records as $record)
-            <tr>
-                <td class="bg-light">{{$record->emp_id}}</td>
-                <td class="bg-light">{{$record->first_name}}</td>
-                <td class="bg-light">{{$record->last_name}}</td>
-                <td class="bg-light">{{$record->age}}</td>
-                <td class="bg-light">{{$record->gender}}</td>
-                <td class="bg-light">{{$record->department}}</td>
-                <td class="bg-light">{{$record->date_of_join}}</td>
-                <td class="bg-light">{{$record->salary}}</td>
-                <td class="bg-light">{{$record->email}}</td>
-                <td class="bg-light">{{$record->mobile}}</td>
-                <td class="bg-light">{{$record->password}}</td>
-                <td class="bg-light">{{$record->hobby}}</td>
-                <td class="bg-light">photo </td>
-            </tr>
-            @endforeach
-        </tbody>
+            <tbody>
+                @foreach($records as $record)
+                <tr>
+                    <td class="bg-light">{{$record->emp_id}}</td>
+                    <td class="bg-light">{{$record->first_name}}</td>
+                    <td class="bg-light">{{$record->last_name}}</td>
+                    <td class="bg-light">{{$record->age}}</td>
+                    <td class="bg-light">{{$record->gender}}</td>
+                    <td class="bg-light">{{$record->department}}</td>
+                    <td class="bg-light">{{$record->date_of_join}}</td>
+                    <td class="bg-light">{{$record->salary}}</td>
+                    <td class="bg-light">{{$record->email}}</td>
+                    <td class="bg-light">{{$record->mobile}}</td>
+                    <td class="bg-light">{{$record->password}}</td>
+                    <td class="bg-light">{{$record->hobby}}</td>
+                    <td class="bg-light"><img src="{{ asset($record->image) }}" width="100" height="100" alt=""> </td>
+                </tr>
+                @endforeach
+            </tbody>
 
-    </table>
- 
+        </table>
+    </div>
+
 </body>
 
 </html>

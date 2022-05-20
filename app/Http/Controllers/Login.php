@@ -14,7 +14,7 @@ class Login extends Controller
       ]);
 
       if ($data['email'] === 'admin' && $data['password'] === '123') {
-          $data->session()->put('admin',"ADMIN");
+          $data->session()->put('admin',"Hello Admin");
           return redirect('admin_dashboard');
       } else {
 
