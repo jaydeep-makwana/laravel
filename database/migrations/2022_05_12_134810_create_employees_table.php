@@ -24,7 +24,7 @@ class CreateEmployeesTable extends Migration
             $table->integer('salary');
             $table->string('email',50);
             $table->bigInteger('mobile');
-            $table->string('password',50);
+            $table->string('password');
             $table->string('hobby');
             $table->string('image',100);
             $table->timestamps();
