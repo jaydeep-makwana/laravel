@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Rules\email;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class getUserData extends Controller
 {
@@ -34,9 +35,6 @@ class getUserData extends Controller
         $fileName = $records->file('image')->getClientOriginalName();
         $img_path = $records->file('image')->move('photos', $fileName);
 
-        // $target_dir = "../App/";
-        // $img_path = $target_dir . basename($_FILES['image']['name']);
-        //     move_uploaded_file($_FILES['image']['tmp_name'],$img_path);
 
         # insert data using query
         // DB::insert(
@@ -67,7 +65,7 @@ class getUserData extends Controller
             "salary" => $records->input('salary'),
             "email" => $records->input('email'),
             "mobile" => $records->input('mobile'),
-            "password" => $records->input('Password'),
+            "password" =>Hash::make($records->input('Password')),
             "hobby" => $hobby,
             "image" => $img_path,
         ]);
