@@ -33,9 +33,26 @@ class getUserData extends Controller
 
         $hobby = implode(", ", $records->input('hobby'));
         $fileName = $records->file('image')->getClientOriginalName();
-        $img_path = $records->file('image')->move('photos', $fileName);
 
+        $folderName = $records->input('folderName');
+        if (isset($folderName)) {
 
+            if ($records->input('fileName') == 'original') {
+                $img_path = $records->file('image')->storeAs($folderName, $fileName);
+            } else {
+
+                $img_path = $records->file('image')->store($folderName);
+            }
+        } else {
+
+            if ($records->input('fileName') == 'original') {
+                $img_path = $records->file('image')->storeAs('images', $fileName);
+            } else {
+
+                $img_path = $records->file('image')->store('images');
+            }
+        }
+        // $img_path = $records->file('image')->move('photos', $fileName);   # this image will save in public/photos folder
         # insert data using query
         // DB::insert(
         //     "INSERT INTO `employees` (`first_name`,`last_name`,`age`,`gender`,`department`,`date_of_join`,`salary`,`email`,`mobile`,`password`,`hobby`) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
@@ -65,7 +82,7 @@ class getUserData extends Controller
             "salary" => $records->input('salary'),
             "email" => $records->input('email'),
             "mobile" => $records->input('mobile'),
-            "password" =>Hash::make($records->input('Password')),
+            "password" => Hash::make($records->input('Password')),
             "hobby" => $hobby,
             "image" => $img_path,
         ]);

@@ -87,11 +87,6 @@
                             <small>@error('salary'){{$message}} @enderror </small>
                         </div>
 
-                    </div>
-
-
-                    <div class="col-lg-6  ">
-
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}">
@@ -103,6 +98,12 @@
                             <input type="text" class="form-control" name="mobile" id="mobile" value="{{ old('mobile') }}">
                             <small>@error('mobile'){{$message}} @enderror </small>
                         </div>
+
+                    </div>
+
+
+                    <div class="col-lg-6  ">
+
 
                         <div class="form-group">
                             <label for="password">Password</label>
@@ -149,7 +150,27 @@
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Upload Your Photo</label>
                             <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
-                            <small>  @error('image'){{$message}} @enderror </small>
+                            <small> @error('image'){{$message}} @enderror </small>
+                        </div>
+
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="folderCkeck" id="folderCkeck">
+                            <label for="folderCkeck" class="form-check-label">Want you store image in spacific folder?</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="folderName">Folder Name</label>
+                            <input type="text" class="form-control" name="folderName" id="folderName" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <small> @error('fileName'){{$message}} @enderror </small>
+                            <select name="fileName" class="form-control" id="">
+                                <option value="">--Select Name Of Image</option>
+                                <option value="original">Original Name</option>
+                                <option value="random">Random Name</option>
+                            </select>
                         </div>
 
                         <div>
@@ -171,6 +192,16 @@
     </div>
 
 
+    <script>
+        let checkBox = document.getElementById("folderCkeck");
+        let folder_name = document.getElementById("folderName");
+
+        checkBox.addEventListener('click', () => {
+
+            folder_name.disabled = false;
+
+        });
+    </script>
 </body>
 
 </html>
