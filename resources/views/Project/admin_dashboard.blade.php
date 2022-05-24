@@ -87,7 +87,7 @@
                     <td class="bg-light">{{$record->mobile}}</td>
                     <td class="bg-light">{{$record->password}}</td>
                     <td class="bg-light">{{$record->hobby}}</td>
-                    <td class="bg-light"><img src="{{ asset($record->image) }}" width="100" height="75" alt=""> </td>
+                    <td class="bg-light"><img src="{{ asset($record->image) }}" width="75" height="75" alt=""> </td>
                 </tr>
                 @endforeach
             </tbody>

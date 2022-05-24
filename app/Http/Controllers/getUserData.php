@@ -38,18 +38,18 @@ class getUserData extends Controller
         if (isset($folderName)) {
 
             if ($records->input('fileName') == 'original') {
-                $img_path = $records->file('image')->storeAs($folderName, $fileName);
+                $img_path = $records->file('image')->storeAs($folderName, $fileName,'uploads');
             } else {
 
-                $img_path = $records->file('image')->store($folderName);
+                $img_path = $records->file('image')->store($folderName,'uploads');
             }
         } else {
 
             if ($records->input('fileName') == 'original') {
-                $img_path = $records->file('image')->storeAs('images', $fileName);
+                $img_path = $records->file('image')->storeAs('images', $fileName,'uploads');
             } else {
 
-                $img_path = $records->file('image')->store('images');
+                $img_path = $records->file('image')->store('images','uploads');
             }
         }
         // $img_path = $records->file('image')->move('photos', $fileName);   # this image will save in public/photos folder
