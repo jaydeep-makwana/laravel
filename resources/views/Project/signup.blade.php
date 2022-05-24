@@ -167,7 +167,7 @@
                         <div class="form-group">
                             <small> @error('fileName'){{$message}} @enderror </small>
                             <select name="fileName" class="form-control" id="">
-                                <option value="">--Select Name Of Image</option>
+                                <option value="" selected disabled>--Select Name Of Image</option>
                                 <option value="original">Original Name</option>
                                 <option value="random">Random Name</option>
                             </select>
