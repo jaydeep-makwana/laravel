@@ -66,9 +66,9 @@
                     <th class="bg-dark text-white">Salary</th>
                     <th class="bg-dark text-white">Email</th>
                     <th class="bg-dark text-white">Mobile No.</th>
-                    <th class="bg-dark text-white">Password</th>
                     <th class="bg-dark text-white">Hobby</th>
                     <th class="bg-dark text-white">Photo</th>
+                    <th class="bg-dark text-white">Delete</th>
                 </tr>
             </thead>
 
@@ -85,9 +85,9 @@
                     <td class="bg-light">{{$record->salary}}</td>
                     <td class="bg-light">{{$record->email}}</td>
                     <td class="bg-light">{{$record->mobile}}</td>
-                    <td class="bg-light">{{$record->password}}</td>
                     <td class="bg-light">{{$record->hobby}}</td>
                     <td class="bg-light"><img src="{{ asset($record->image) }}" width="75" height="75" alt=""> </td>
+                    <td class="bg-light"><a href="delete/{{$record->emp_id}}" class="btn btn-danger">Delete</a></td>
                 </tr>
                 @endforeach
             </tbody>

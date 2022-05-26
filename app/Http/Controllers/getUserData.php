@@ -89,4 +89,12 @@ class getUserData extends Controller
 
         return redirect("login");
     }
+    
+    
+    
+    
+    function distroy($id){
+        DB::table('employees')->where('emp_id',$id)->delete();
+        return redirect("admin_dashboard");
+    }
 }

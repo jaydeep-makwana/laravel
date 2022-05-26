@@ -44,7 +44,8 @@ Route::get('admin_dashboard', [EmployeeController::class, "employee_records"])->
 # sign out user
 Route::get('logout',[Logout::class,'logout']);
 
-
+# delete data 
+Route::get('delete/{id}', [getUserData::class,'distroy']);
 
 
 
