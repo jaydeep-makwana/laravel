@@ -10,16 +10,27 @@
     <title>HOME</title>
 </head>
 
-<body id="main-bg">
+<body>
 
+<div class="container-fluid h-100 bg-light">
 
-    <div class="container-fluid p-0">
-       @include('Project.navbar')
+    <div class="container">
+        @include('Project.navbar')
+        <div class="main-div">
 
-        <h1 class="text-white text-center mt-5">Welcome To Twitter</h1>
-
+            <h1 class="text-center mt-5">Happening now</h1>
+            <h2 class="text-center mt-5">Join Twitter today.</h2>
+            <a class="btn btn-primary">Sign Up</a>
+            <a class="btn btn-primary">Sign In</a>
+            
+        </div>
     </div>
-
+    
+    <footer class="mb-0">
+    © 2022 Twitter, Inc.
+    </footer>
+    
+</div>
 
 </body>
 
