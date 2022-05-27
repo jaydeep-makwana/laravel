@@ -14,7 +14,7 @@
 
 
     <div class="container-fluid p-0">
-       @include('Project.navbar')
+        @include('Project.navbar')
 
         <div class="container">
             <h3 class="text-black mt-5 p-2 para border border-dark">
@@ -23,9 +23,9 @@
         </div>
 
         <div class="container row mt-5  owner ">
-            
+
             <div class="col col-lg-4  ">
-<!-- "rounded" class only round corner -->
+                <!-- "rounded" class only round corner -->
                 <img src="{{ asset('images/elon-musk-twitter.jpg')}}" class="img-thumbnail border-dark" width="300px" alt="...">
             </div>
             <div class="col col-lg-8 ">
@@ -37,6 +37,7 @@
         </div>
 
 
+        @include('Project.footer')
 
     </div>
 

@@ -8,8 +8,6 @@ body {
     height: 100%;
 }
 
-
-
 .para {
     text-align: justify;
     background: rgb(29, 161, 242, 0.8);
@@ -52,6 +50,14 @@ footer {
 p {
     margin: 0 10px;
     padding: 3px;
+}
+
+p a {
+    color: aliceblue;
+}
+
+p a:hover {
+    color: aliceblue;
 }
 
 .home-buttons {

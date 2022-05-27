@@ -17,9 +17,6 @@
              <li class="nav-item active ml-3">
                  <a class="nav-link" href="{{ asset('/') }}">Home </a>
              </li>
-             <li class="nav-item active ml-3">
-                 <a class="nav-link" href="{{ url('about') }}">About Us </a>
-             </li>
              <li class="nav-item active ml-3 signUp">
                  <a class="nav-link" href="{{ url('signup') }}">Sign up </a>
              </li>

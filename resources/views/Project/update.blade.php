@@ -148,11 +148,6 @@
                             <button class="btn btn-primary ">Update</button>
                             <a href="{{ url('admin_dashboard') }}" class="btn btn-warning">Back</a>
 
-                            <div class="form-group mt-5 text-center   bg-light ">
-                                <p class="text-danger">already have an account?</p>
-                                <a href="login" class="text-primary"> click here</a>
-                            </div>
-
                         </div>
                     </div>
 

@@ -23,7 +23,7 @@
             <div class="home-buttons text-center">
                 <a class="btn home-btn">Sign Up</a>
             </div>
-            
+
             <div class="home-buttons text-center">
                 <a class="btn home-btn">Sign In</a>
             </div>
@@ -35,10 +35,7 @@
         </div>
 
 
-        <footer >
-            <p> © 2022 Twitter, Inc.</p>
-            <p> © 2022 Twitter, Inc.</p>
-        </footer>
+@include('Project.footer')
     </div>
 
 
