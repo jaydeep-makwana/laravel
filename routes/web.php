@@ -36,7 +36,7 @@ Route::post("user_data", [getUserData::class, "user_data"]);
 Route::post("login", [login::class, "loginDetails"]);
 Route::view("about", "Project.about");
 
-Route::get("dbRecords", [dbTest::class, "fetchRecord"]);             # fetch data from database
+Route::get("db", [dbTest::class, "fetchRecord"]);             # fetch data from database
 
 # fetch data using model
 Route::get('admin_dashboard', [EmployeeController::class, "employee_records"])->middleware('adminLogout');
@@ -46,6 +46,10 @@ Route::get('logout',[Logout::class,'logout']);
 
 # delete data 
 Route::get('delete/{id}', [getUserData::class,'distroy']);
+
+# update data 
+Route::get('edit/{id}', [getUserData::class,'edit']);
+Route::put('edit/{id}', [getUserData::class,'update']);
 
 
 

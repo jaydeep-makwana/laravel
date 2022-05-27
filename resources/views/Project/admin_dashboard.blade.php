@@ -49,7 +49,7 @@
 
             <thead>
                 <tr class="bg-warning">
-                    <th colspan="13">
+                    <th colspan="14">
                         <h1>{{session('admin')}}</h1>
                     </th>
 
@@ -69,6 +69,7 @@
                     <th class="bg-dark text-white">Hobby</th>
                     <th class="bg-dark text-white">Photo</th>
                     <th class="bg-dark text-white">Delete</th>
+                    <th class="bg-dark text-white">Update</th>
                 </tr>
             </thead>
 
@@ -88,6 +89,7 @@
                     <td class="bg-light">{{$record->hobby}}</td>
                     <td class="bg-light"><img src="{{ asset($record->image) }}" width="75" height="75" alt=""> </td>
                     <td class="bg-light"><a href="delete/{{$record->emp_id}}" class="btn btn-danger">Delete</a></td>
+                    <td class="bg-light"><a href="edit/{{$record->emp_id}}" class="btn btn-warning">Update</a></td>
                 </tr>
                 @endforeach
             </tbody>

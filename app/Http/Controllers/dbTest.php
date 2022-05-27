@@ -10,6 +10,8 @@ class dbTest extends Controller
     function fetchRecord()
     {
 
+        ## SQL Query
+
         # insert record
         // DB::insert("INSERT INTO employees (`name`,`standard`,`age`,`rollNo`) VALUES (?,?,?,?)",['Jaydeep',11,16,1]);
 
@@ -19,10 +21,20 @@ class dbTest extends Controller
         # delete record
         // DB::delete("DELETE FROM employees WHERE `id`=?",[19]);
 
-        # fetch records using query
+        # fetch records 
         // $users = DB::select("SELECT * FROM employees");
         // return view("main.admin_dashboard",["records"=>$users]);
 
+        // $fetchValue =  DB::select("SELECT first_name FROM employees WHERE emp_id = 1");
+        //  foreach($fetchValue as $value){
+        // }
+        // echo $value->first_name;
+
+
         
+        ## Query Builder
+
+        # Fetch spacific value
+        // return DB::table('employees')->where('emp_id',2)->value('first_name');
     }
 }
