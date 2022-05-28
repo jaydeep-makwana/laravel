@@ -51,6 +51,8 @@ Route::get('delete/{id}', [getUserData::class,'distroy']);
 Route::get('edit/{id}', [getUserData::class,'edit']);
 Route::put('edit/{id}', [getUserData::class,'update']);
 
+# route for check function 
+Route::view('f','Project.functions');
 
 
 

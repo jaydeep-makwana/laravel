@@ -13,7 +13,10 @@
 
 <body>
 
+  
+    
     <div class="container-fluid p-0 form-border">
+        @include('Project.functions')
         @include('Project.navbar')
         <!-- register form -->
         <div class="container mt-5 w-100">
@@ -127,22 +130,22 @@
                         <label for=""> Hobby <small>@error('hobby'){{$message}} @enderror </small>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="reading" value="reading">
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="reading" value="reading"   {{hobbyCheck('reading')}}>
                                 <label for="reading" class="form-check-label">Reading</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="dancing" value="dancing">
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="dancing" value="dancing"   {{hobbyCheck('dancing')}}>
                                 <label for="dancing" class="form-check-label">Dancing</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="programming" value="programming">
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="programming" value="programming"   {{hobbyCheck('programming')}}>
                                 <label for="programming" class="form-check-label">Programming</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="gaming" value="gaming">
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="gaming" value="gaming"   {{hobbyCheck('gaming')}}>
                                 <label for="gaming" class="form-check-label">Gaming</label>
                             </div>
 

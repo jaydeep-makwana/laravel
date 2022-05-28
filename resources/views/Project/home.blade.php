@@ -21,11 +21,11 @@
             <h2 class="text-center mt-5">Join Twitter today.</h2>
 
             <div class="home-buttons text-center">
-                <a class="btn home-btn">Sign Up</a>
+                <a href="{{url('signup')}}" class="btn home-btn">Sign Up</a>
             </div>
 
             <div class="home-buttons text-center">
-                <a class="btn home-btn">Sign In</a>
+                <a href="{{url('login')}}" class="btn home-btn">Sign In</a>
             </div>
 
 

@@ -67,7 +67,7 @@
                         <div class="form-ckeck">
                             <label for="department">Department <small>@error('department'){{$message}} @enderror </small>
                                 <select name="department" class="form-control" id="department">
-                                    <option value="{{$detail->department}}" selected >{{$detail->department}}</option>
+                                    <option value="{{$detail->department}}" selected>{{$detail->department}}</option>
                                     <option value="R & D" @if(old('department')=='R & D' ) selected @endif>R & D</option>
                                     <option value="Sales" @if(old('department')=='Sales' ) selected @endif>Sales</option>
                                     <option value="Marketing" @if(old('department')=='Marketing' ) selected @endif>Marketing</option>
@@ -94,9 +94,9 @@
 
 
                     <div class="col-lg-6  ">
-                    <div class="form-group">
+                        <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" name="Password" id="password"  value="{{$detail->password}}">
+                            <input type="password" class="form-control" name="Password" id="password" value="{{$detail->password}}">
                             <small>@error('Password'){{$message}} @enderror </small>
                         </div>
 
@@ -155,7 +155,7 @@
             </form>
         </div>
     </div>
- 
+
 
 
 </body>
