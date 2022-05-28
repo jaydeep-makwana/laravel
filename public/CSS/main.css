@@ -8,26 +8,7 @@ body {
     height: 100%;
 }
 
-#main-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/twitter-1.jpg);
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
-    background-attachment: fixed;
-}
 
-#signup-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/bunch-twitter-icons-logos-3d-background_125322-9.webp);
-    height: 100vh;
-    background-attachment: fixed;
-}
-
-#signin-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/twitter-3.jpg);
-    height: 100vh;
-    background-attachment: fixed;
-}
 
 .para {
     text-align: justify;
@@ -77,7 +58,7 @@ p {
     margin: 50px;
 }
 
-.btn {
+.home-btn {
     color: white;
     background-color: #1da1f2;
     width: 20%;

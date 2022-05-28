@@ -21,11 +21,11 @@
             <h2 class="text-center mt-5">Join Twitter today.</h2>
 
             <div class="home-buttons text-center">
-                <a class="btn">Sign Up</a>
+                <a class="btn home-btn">Sign Up</a>
             </div>
             
             <div class="home-buttons text-center">
-                <a class="btn">Sign In</a>
+                <a class="btn home-btn">Sign In</a>
             </div>
 
 
@@ -35,7 +35,7 @@
         </div>
 
 
-        <footer class="mb-0">
+        <footer >
             <p> © 2022 Twitter, Inc.</p>
             <p> © 2022 Twitter, Inc.</p>
         </footer>

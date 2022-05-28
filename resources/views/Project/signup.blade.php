@@ -11,9 +11,9 @@
 </head>
 
 
-<body id="signup-bg">
+<body>
 
-    <div class="container-fluid p-0 text-white">
+    <div class="container-fluid p-0 form-border">
         @include('Project.navbar')
         <!-- register form -->
         <div class="container mt-5 w-100">
@@ -87,16 +87,11 @@
                             <small>@error('salary'){{$message}} @enderror </small>
                         </div>
 
+
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}">
                             <small>@error('email'){{$message}} @enderror </small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mobile">Mobile No.</label>
-                            <input type="text" class="form-control" name="mobile" id="mobile" value="{{ old('mobile') }}">
-                            <small>@error('mobile'){{$message}} @enderror </small>
                         </div>
 
                     </div>
@@ -104,6 +99,12 @@
 
                     <div class="col-lg-6  ">
 
+
+                        <div class="form-group">
+                            <label for="mobile">Mobile No.</label>
+                            <input type="text" class="form-control" name="mobile" id="mobile" value="{{ old('mobile') }}">
+                            <small>@error('mobile'){{$message}} @enderror </small>
+                        </div>
 
                         <div class="form-group">
                             <label for="password">Password</label>
@@ -154,7 +155,7 @@
                         </div>
 
 
-                        <div class="form-check">
+                        <!-- <div class="form-check">
                             <input type="checkbox" class="form-check-input" name="folderCkeck" id="folderCkeck">
                             <label for="folderCkeck" class="form-check-label">Want you store image in spacific folder?</label>
                         </div>
@@ -171,7 +172,7 @@
                                 <option value="original">Original Name</option>
                                 <option value="random">Random Name</option>
                             </select>
-                        </div>
+                        </div> -->
 
                         <div>
 
@@ -192,7 +193,7 @@
     </div>
 
 
-    <script>
+    <!-- <script>
         let checkBox = document.getElementById("folderCkeck");
         let folder_name = document.getElementById("folderName");
 
@@ -201,7 +202,7 @@
             folder_name.disabled = false;
 
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

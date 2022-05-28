@@ -49,8 +49,8 @@
 
 
 
-        <h1 class="text-white text-center mt-5"> Hello, {{session('email')}} </h1>
-        <h2 class="text-white text-center mt-5">Welcome To Twitter</h2>
+        <h1 class=" text-center mt-5"> Hello, {{session('email')}} </h1>
+        <h2 class=" text-center mt-5">Welcome To Twitter</h2>
 
     </div>
 

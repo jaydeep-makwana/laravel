@@ -34,26 +34,35 @@ class getUserData extends Controller
         $hobby = implode(", ", $records->input('hobby'));
         $fileName = $records->file('image')->getClientOriginalName();
 
-        $folderName = $records->input('folderName');
-        if (isset($folderName)) {
+        $img_path = $records->file('image')->storeAs('photos', $fileName, 'uploads');
 
-            if ($records->input('fileName') == 'original') {
-                $img_path = $records->file('image')->storeAs($folderName, $fileName, 'uploads');
-            } else {
-
-                $img_path = $records->file('image')->store($folderName, 'uploads');
-            }
-        } else {
-
-            if ($records->input('fileName') == 'original') {
-                $img_path = $records->file('image')->storeAs('images', $fileName, 'uploads');
-            } else {
-
-                $img_path = $records->file('image')->store('images', 'uploads');
-            }
-        }
         // $img_path = $records->file('image')->move('photos', $fileName);   # this image will save in public/photos folder
-        # insert data using query
+
+
+
+        # save img as original/random name or spacific folder
+
+        // $folderName = $records->input('folderName');
+        // if (isset($folderName)) {
+
+        //     if ($records->input('fileName') == 'original') {
+        //         $img_path = $records->file('image')->storeAs($folderName, $fileName, 'uploads');
+        //     } else {
+
+        //         $img_path = $records->file('image')->store($folderName, 'uploads');
+        //     }
+        // } else {
+
+        //     if ($records->input('fileName') == 'original') {
+        //         $img_path = $records->file('image')->storeAs('images', $fileName, 'uploads');
+        //     } else {
+
+        //         $img_path = $records->file('image')->store('images', 'uploads');
+        //     }
+        // }
+
+
+        # insert data using sql query
         // DB::insert(
         //     "INSERT INTO `employees` (`first_name`,`last_name`,`age`,`gender`,`department`,`date_of_join`,`salary`,`email`,`mobile`,`password`,`hobby`) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
         //     [
@@ -129,7 +138,8 @@ class getUserData extends Controller
 
         $hobby = implode(", ", $records->input('hobby'));
         $fileName = $records->file('image')->getClientOriginalName();
-        $img_path = $records->file('image')->storeAs( $fileName, 'uploads');
+        $img_path = $records->file('image')->storeAs('photos', $fileName, 'uploads');
+
         DB::table('employees')->where('emp_id', $id)->update([
             "first_name" => $records->input('firstName'),
             "last_name" => $records->input('lastName'),
@@ -145,11 +155,7 @@ class getUserData extends Controller
             "image" => $img_path,
         ]);
 
-        DB::table('employees')->where('emp_id', $id)->update([
-            "age" => '11',
- 
-        ]);
+
         return redirect("admin_dashboard");
-       
     }
 }

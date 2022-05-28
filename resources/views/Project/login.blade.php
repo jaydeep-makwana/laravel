@@ -11,9 +11,9 @@
 </head>
 
 
-<body id="signin-bg">
+<body>
 
-    <div class="container-fluid p-0 text-white">
+    <div class="container-fluid p-0 text-white bg-light">
         @include('Project.navbar')
 
         <div class="col-lg-4  mt-5 mx-auto">
