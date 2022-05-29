@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\interest;
 use App\Http\Controllers\mobile;
@@ -7,7 +8,6 @@ use App\Http\Controllers\percentage;
 use App\Http\Controllers\show_data;
 use App\Http\Controllers\ApiData;
 use App\Http\Controllers\dbTest;
-use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\getUserData;
 use App\Http\Controllers\login;
 use App\Http\Controllers\Logout;
@@ -29,17 +29,18 @@ use App\Http\Controllers\Logout;
 Route::view("/", "Project.home");
 Route::view("signup", "Project.signup");
 Route::view('login','Project.login')->middleware('login');
-Route::view('dashboard','Project.dashboard')->middleware('logout');
+Route::view('user_dashboard','Project.user_dashboard')->middleware('logout');
 
 
 Route::post("user_data", [getUserData::class, "user_data"]);
 Route::post("login", [login::class, "loginDetails"]);
 Route::view("about", "Project.about");
+Route::view("career", "Project.career");
 
 Route::get("db", [dbTest::class, "fetchRecord"]);             # fetch data from database
 
 # fetch data using model
-Route::get('admin_dashboard', [EmployeeController::class, "employee_records"])->middleware('adminLogout');
+Route::get('admin_dashboard', [AdminController::class, "user_records"])->middleware('adminLogout');
 
 # sign out user
 Route::get('logout',[Logout::class,'logout']);

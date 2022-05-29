@@ -14,11 +14,8 @@ class getUserData extends Controller
         $records->validate([
             "firstName" => "required | min:3 | max:10 | alpha",
             "lastName" => "required | min:3 | max:10 | alpha",
-            "age" => "required | regex:/^[0-9]/",                     # regex 
+            "dob" => "required",                     # regex 
             "gender" => "required",
-            "department" => "required",
-            "date_of_join" => "required",
-            "salary" => "required | numeric",
             "email" => ["required", new email],               # Custom Validation Rule using Rule Objects
             "mobile" => "required | numeric | regex:/^[0-9]{10}+$/",
             "Password" => ["required", function ($attribute, $value, $fail) {
@@ -81,14 +78,11 @@ class getUserData extends Controller
         // );
 
         # insert data using query builder
-        DB::table("employees")->insert([
+        DB::table("users")->insert([
             "first_name" => $records->input('firstName'),
             "last_name" => $records->input('lastName'),
-            "age" => $records->input('age'),
+            "DOB" => $records->input('dob'),
             "gender" => $records->input('gender'),
-            "department" => $records->input('department'),
-            "date_of_join" => $records->input('date_of_join'),
-            "salary" => $records->input('salary'),
             "email" => $records->input('email'),
             "mobile" => $records->input('mobile'),
             "password" => Hash::make($records->input('Password')),
@@ -104,13 +98,13 @@ class getUserData extends Controller
 
     function distroy($id)
     {
-        DB::table('employees')->where('emp_id', $id)->delete();
+        DB::table('users')->where('id', $id)->delete();
         return redirect("admin_dashboard");
     }
 
     function edit($id)
     {
-        $data =   DB::table('employees')->where('emp_id', $id)->get();
+        $data =   DB::table('users')->where('id', $id)->get();
 
         return view('Project.update', ['data' => $data]);
     }
@@ -120,18 +114,10 @@ class getUserData extends Controller
         $records->validate([
             "firstName" => "required | min:3 | max:10 | alpha",
             "lastName" => "required | min:3 | max:10 | alpha",
-            "age" => "required | regex:/^[0-9]/",                     # regex 
             "gender" => "required",
-            "department" => "required",
-            "date_of_join" => "required",
-            "salary" => "required | numeric",
+            "dob" => "required ",                     # regex 
             "email" => ["required", new email],               # Custom Validation Rule using Rule Objects
-            "mobile" => "required | numeric | regex:/^[0-9]{10}+$/",
-            "Password" => ["required", function ($attribute, $value, $fail) {
-                if (!preg_match('/[A-Z]/', $value) || !preg_match('/[a-z]/', $value) || !preg_match('/[\d]/', $value) || !preg_match('/[!@#$%&*]/', $value)) {
-                    $fail("the $attribute must contain one uppercase,lowercase,digit and following character : !@#$%&*");
-                }
-            }],                                             # Custom Validation Rule using Closures
+            "mobile" => "required | numeric | regex:/^[0-9]{10}+$/",                                            # Custom Validation Rule using Closures
             "hobby" => "required",
             "image" => "required"
         ]);
@@ -140,17 +126,13 @@ class getUserData extends Controller
         $fileName = $records->file('image')->getClientOriginalName();
         $img_path = $records->file('image')->storeAs('photos', $fileName, 'uploads');
 
-        DB::table('employees')->where('emp_id', $id)->update([
+        DB::table('users')->where('id', $id)->update([
             "first_name" => $records->input('firstName'),
             "last_name" => $records->input('lastName'),
-            "age" => $records->input('age'),
             "gender" => $records->input('gender'),
-            "department" => $records->input('department'),
-            "date_of_join" => $records->input('date_of_join'),
-            "salary" => $records->input('salary'),
+            "DOB" => $records->input('dob'),
             "email" => $records->input('email'),
             "mobile" => $records->input('mobile'),
-            "password" => $records->input('Password'),
             "hobby" => $hobby,
             "image" => $img_path,
         ]);

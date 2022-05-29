@@ -5,7 +5,7 @@
              <path fill="#1DA1F2" fill-rule="evenodd" d="M24,4.3086 C23.117,4.7006 22.168,4.9646 21.172,5.0836 C22.188,4.4746 22.969,3.5096 23.337,2.3596 C22.386,2.9246 21.332,3.3336 20.21,3.5556 C19.312,2.5976 18.032,1.9996 16.616,1.9996 C13.897,1.9996 11.692,4.2046 11.692,6.9236 C11.692,7.3096 11.736,7.6856 11.82,8.0456 C7.728,7.8406 4.099,5.8806 1.671,2.9006 C1.247,3.6286 1.004,4.4736 1.004,5.3766 C1.004,7.0846 1.873,8.5926 3.195,9.4756 C2.388,9.4486 1.628,9.2276 0.964,8.8596 L0.964,8.9206 C0.964,11.3066 2.661,13.2966 4.914,13.7486 C4.501,13.8626 4.065,13.9216 3.617,13.9216 C3.299,13.9216 2.991,13.8906 2.69,13.8336 C3.317,15.7896 5.135,17.2136 7.29,17.2536 C5.604,18.5736 3.481,19.3606 1.175,19.3606 C0.777,19.3606 0.385,19.3376 0,19.2926 C2.179,20.6886 4.767,21.5046 7.548,21.5046 C16.605,21.5046 21.557,14.0016 21.557,7.4946 C21.557,7.2816 21.552,7.0696 21.543,6.8586 C22.505,6.1636 23.34,5.2966 24,4.3086" />
          </svg>
      </a>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
      </button>
 
@@ -14,36 +14,83 @@
 
          </ul>
          <ul class="navbar-nav ml-auto">
-             <li class="nav-item active ml-3">
-                 <a class="nav-link nav" href="{{ asset('/') }}">Home </a>
+             <li class="nav-item active ml-3 mt-1">
+                 <a class="nav-link nav" href="{{ url('/') }}">Home </a>
              </li>
-             <li class="nav-item active ml-3 signUp">
+             <li class="nav-item active ml-3 signUp mt-1">
                  <a class="nav-link nav" href="{{ url('signup') }}">Sign up </a>
              </li>
-             <li class="nav-item active ml-3 signIn">
+             <li class="nav-item active ml-3 signIn mt-1">
                  <a class="nav-link nav" href="{{ url('login') }}">Sign in </a>
              </li>
-             <li class="nav-item active mt-1 ml-3">
-                 <a class="btn btn-danger logout-btn" href="{{ url('logout') }}">Sign out</a>
+             <li class="nav-item active ml-3 mt-1">
+                 <a class="nav-link nav user-dashboard" href="{{  url('user_dashboard')  }}">Dashboard </a>
+             </li>
+             <li class="nav-item active ml-3 mt-1">
+                 <a class="nav-link nav admin-dashboard" href="{{ url('admin_dashboard') }}">Dashboard </a>
+             </li>
+             <li class="nav-item active ml-3 signIn mt-1 admin-logout">
+                 <a class="btn btn-danger" href="{{ url('logout') }}">Logout </a>
+             </li>
+
+             <li class="nav-item active ml-3 login-user">
+                 <img src="images/shutterstock_1231981675.jpg" class="user-img img-thumbnail border-dark" alt="Network Error" data-toggle="modal" data-target="#exampleModal">
+
+                 <!--Login user Modal -->
+                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                     <div class="modal-dialog login-modal">
+
+                         <div class="modal-content">
+
+                             <div class="modal-header">
+
+                                 <h2></h2>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                 </button>
+
+                             </div>
+
+                             <!-- <div class="modal-body">
+                                 <h2><a href="" class="btn btn-danger">Delete Account</a></h2>
+                             </div> -->
+
+
+                             <div class="modal-body">
+                                 <h2><a href="{{ url('logout')}}" class="btn btn-danger">Log out</a></h2>
+                             </div>
+
+                         </div>
+
+                     </div>
+
+                 </div>
+                 <!-- modal finished -->
              </li>
          </ul>
 
      </div>
  </nav>
 
- @if(session()->has('email') || session()->has('admin'))
+ @if(session()->has('admin'))
  <script>
      document.querySelector('.signUp').style.display = "none";
      document.querySelector('.signIn').style.display = "none";
+     document.querySelector('.admin-logout').style.display = "block";
+     document.querySelector('.admin-dashboard').style.display = "block";
+     </script>
+ @elseif(session()->has('email'))
+ 
+ <script>   
+     document.querySelector('.signUp').style.display = "none";
+     document.querySelector('.signIn').style.display = "none";
+     document.querySelector('.login-user').style.display = "block";
+     document.querySelector('.user-dashboard').style.display = "block";
  </script>
- @else
 
- <script>
-     document.querySelector('.logout-btn').style.display = "none";
- </script>
+@endif
 
 
- @endif
-
- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+ <script src="JS/jquery.slim.min.js" ></script>
+ <script src="JS/bootstrap.bundle.min.js" ></script>

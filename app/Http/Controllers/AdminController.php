@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Employee;
+use App\Models\User;
 
-class EmployeeController extends Controller
+class AdminController extends Controller
 {
     
-    function employee_records(){
+    function user_records(){
         # fetch records using model
-        $users = Employee::all();
+        $users = User::all();
         return view("Project.admin_dashboard", ["records" => $users]);
     }
 }

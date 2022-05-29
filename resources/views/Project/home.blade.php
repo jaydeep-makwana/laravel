@@ -17,8 +17,8 @@
         @include('Project.navbar')
         <div class="main-div">
 
-            <h1 class="text-center mt-5">Happening now</h1>
-            <h2 class="text-center mt-5">Join Twitter today.</h2>
+            <h1 class="text-center mt-5 font-style">Happening now</h1>
+            <h2 class="text-center mt-5 font-style">Join Twitter today.</h2>
 
             <div class="home-buttons text-center">
                 <a href="{{url('signup')}}" class="btn home-btn">Sign Up</a>
@@ -27,19 +27,45 @@
             <div class="home-buttons text-center">
                 <a href="{{url('login')}}" class="btn home-btn">Sign In</a>
             </div>
+        </div>
+        <div class="user-div">
 
 
+            <h1 class="text-center mt-5 font-style">Hello user </h1>
+            <h2 class="text-center mt-5 font-style">Welcome to Twitter.</h2>
+        </div>
+        <div class="admin-div">
 
 
-
+            <h1 class="text-center mt-5 font-style">Hello Admin </h1>
+            <h2 class="text-center mt-5 font-style">Welcome to Twitter.</h2>
         </div>
 
 
-@include('Project.footer')
+
+
+
+
+
+        @include('Project.footer')
     </div>
 
 
+    @if(session()->has('admin'))
+    <script>
+ 
+        document.querySelector('.main-div').style.display = "none";
+        document.querySelector('.admin-div').style.display = "block";
+        </script>
+    @elseif(session()->has('email'))
+    
+    <script>
+        document.querySelector('.main-div').style.display = "none";
+      
+        document.querySelector('.user-div').style.display = "block";
+    </script>
 
+    @endif
 </body>
 
 </html>

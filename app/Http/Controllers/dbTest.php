@@ -22,8 +22,8 @@ class dbTest extends Controller
         // DB::delete("DELETE FROM employees WHERE `id`=?",[19]);
 
         # fetch records 
-        // $users = DB::select("SELECT * FROM employees");
-        // return view("main.admin_dashboard",["records"=>$users]);
+        // $users = DB::select("SELECT * FROM users");
+        // return view("Project.admin_dashboard",["records"=>$users]);
 
         // $fetchValue =  DB::select("SELECT first_name FROM employees WHERE emp_id = 1");
         //  foreach($fetchValue as $value){

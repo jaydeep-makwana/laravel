@@ -15,7 +15,7 @@
 
 <body>
 
-    <div class="container-fluid p-0 text-white">
+    <div class="container-fluid p-0">
         @include('Project.navbar')
         <!-- register form -->
         <div class="container mt-5 w-100">
@@ -41,13 +41,6 @@
                             <small>@error('lastName'){{$message}} @enderror </small>
                         </div>
 
-                        <div class="form-group">
-                            <label for="age">Age</label>
-                            <input type="text" class="form-control" name="age" id="age" value="{{$detail->age}}">
-                            <small>@error('age'){{$message}} @enderror </small>
-                        </div>
-
-
                         <label for="">Gender <small>@error('gender'){{$message}} @enderror </small>
                             <div class="form-check">
                                 <label for="male" class="form-check-label">
@@ -63,48 +56,25 @@
                             </div>
                         </label>
 
-
-                        <div class="form-ckeck">
-                            <label for="department">Department <small>@error('department'){{$message}} @enderror </small>
-                                <select name="department" class="form-control" id="department">
-                                    <option value="{{$detail->department}}" selected>{{$detail->department}}</option>
-                                    <option value="R & D" @if(old('department')=='R & D' ) selected @endif>R & D</option>
-                                    <option value="Sales" @if(old('department')=='Sales' ) selected @endif>Sales</option>
-                                    <option value="Marketing" @if(old('department')=='Marketing' ) selected @endif>Marketing</option>
-                                    <option value="HR" @if(old('department')=='HR' ) selected @endif>HR</option>
-                                </select>
-                            </label>
-
-                        </div>
-
                         <div class="form-group">
-                            <label for="doj">Date Of Join</label>
-                            <input type="date" class="form-control" name="date_of_join" id="doj" value="{{$detail->date_of_join}}">
-                            <small>@error('date_of_join'){{$message}} @enderror </small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="salary">Salary</label>
-                            <input type="text" class="form-control" name="salary" id="salary" value="{{$detail->salary}}">
-                            <small>@error('salary'){{$message}} @enderror </small>
+                            <label for="dob">Date Of Birth</label>
+                            <input type="date" class="form-control" name="dob" id="dob" value="{{$detail->DOB}}">
+                            <small>@error('dob'){{$message}} @enderror </small>
                         </div>
 
 
-                    </div>
-
-
-                    <div class="col-lg-6  ">
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" name="Password" id="password" value="{{$detail->password}}">
-                            <small>@error('Password'){{$message}} @enderror </small>
-                        </div>
-
+ 
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" name="email" id="email" value="{{$detail->email}}">
                             <small>@error('email'){{$message}} @enderror </small>
                         </div>
+
+                    </div>
+
+
+                    <div class="col-lg-6  ">
+
 
                         <div class="form-group">
                             <label for="mobile">Mobile No.</label>

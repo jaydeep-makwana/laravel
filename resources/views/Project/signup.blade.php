@@ -41,14 +41,7 @@
                             <input class="form-control" type="text" name="lastName" id="last_name" value="{{ old('lastName') }}">
                             <small>@error('lastName'){{$message}} @enderror </small>
                         </div>
-
-                        <div class="form-group">
-                            <label for="age">Age</label>
-                            <input type="text" class="form-control" name="age" id="age" value="{{ old('age') }}">
-                            <small>@error('age'){{$message}} @enderror </small>
-                        </div>
-
-
+                        
                         <label for="">Gender <small>@error('gender'){{$message}} @enderror </small>
                             <div class="form-check">
                                 <label for="male" class="form-check-label">
@@ -64,8 +57,15 @@
                             </div>
                         </label>
 
+                        <div class="form-group">
+                            <label for="age">Date Of Birth</label>
+                            <input type="date" class="form-control" name="dob" id="dob" value="{{ old('dob') }}">
+                            <small>@error('dob'){{$message}} @enderror </small>
+                        </div>    
 
-                        <div class="form-ckeck">
+
+
+                        <!-- <div class="form-ckeck">
                             <label for="department">Department <small>@error('department'){{$message}} @enderror </small>
                                 <select name="department" class="form-control" id="department">
                                     <option value="" selected disabled>---Choose Department</option>
@@ -88,13 +88,18 @@
                             <label for="salary">Salary</label>
                             <input type="text" class="form-control" name="salary" id="salary" value="{{ old('salary') }}">
                             <small>@error('salary'){{$message}} @enderror </small>
-                        </div>
+                        </div> -->
 
 
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}">
                             <small>@error('email'){{$message}} @enderror </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile No.</label>
+                            <input type="text" class="form-control" name="mobile" id="mobile" value="{{ old('mobile') }}">
+                            <small>@error('mobile'){{$message}} @enderror </small>
                         </div>
 
                     </div>
@@ -103,11 +108,6 @@
                     <div class="col-lg-6  ">
 
 
-                        <div class="form-group">
-                            <label for="mobile">Mobile No.</label>
-                            <input type="text" class="form-control" name="mobile" id="mobile" value="{{ old('mobile') }}">
-                            <small>@error('mobile'){{$message}} @enderror </small>
-                        </div>
 
                         <div class="form-group">
                             <label for="password">Password</label>
@@ -182,7 +182,7 @@
                             <button class="btn btn-primary ">Sign UP</button>
                             <button type="reset" class="btn btn-warning">Reset</button>
 
-                            <div class="form-group mt-5 text-center   bg-light ">
+                            <div class="form-group mt-4 text-center   bg-light ">
                                 <p class="text-danger">already have an account?</p>
                                 <a href="login" class="text-primary"> click here</a>
                             </div>
