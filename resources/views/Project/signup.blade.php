@@ -25,7 +25,7 @@
 
                     <h1 class="text-center col-lg-12 p-1">Sign Up</h1>
                 </div>
-                <div class="row form-body">
+                <div class="row form-body   mb-1">
 
                     <div class="col-lg-6 ">
                         @csrf
@@ -193,6 +193,7 @@
                 </div>
             </form>
         </div>
+        @include('Project.footer')
     </div>
 
 

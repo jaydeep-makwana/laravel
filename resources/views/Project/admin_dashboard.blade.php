@@ -12,37 +12,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg p-0" id="nav">
-        <a class="navbar-brand ml-3" href="/"><img src="{{ asset('images/twitter.png')}}" width="50px" alt="">
-        </a>
-        <div class="navbar-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-        </div>
-
-        <div class="collapse navbar-collapse  " id="navbarSupportedContent">
-
-            <ul class="navbar-nav mr-auto mr-3 text-white">
-                <li class="nav-item active ml-3">
-                    <a class="nav-link" href="{{ asset('/') }}">Home </a>
-                </li>
-                <li class="nav-item active ml-3">
-                    <a class="nav-link" href="{{ url('about') }}">About </a>
-                </li>
-            </ul>
-
-            <ul class="navbar-nav ml-auto mr-3">
-                <li class="nav-item active ml-3">
-                    <a class="btn btn-danger " href="{{ url('logout') }}">Sign out</a>
-                </li>
-
-            </ul>
-
-
-        </div>
-    </nav>
+    @include('Project.navbar')
     <div class="table-responsive">
 
         <table class="table  text-center">

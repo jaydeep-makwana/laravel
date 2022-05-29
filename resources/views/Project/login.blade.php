@@ -13,7 +13,7 @@
 
 <body>
 
-    <div class="container-fluid p-0 text-white bg-light">
+    <div class="container-fluid p-0 bg-light">
         @include('Project.navbar')
 
         <div class="col-lg-4  mt-5 mx-auto">
@@ -54,6 +54,7 @@
             </form>
 
         </div>
+        @include('Project.footer')
     </div>
 
 
