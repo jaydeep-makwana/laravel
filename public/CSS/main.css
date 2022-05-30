@@ -115,22 +115,7 @@ p a:hover {
     text-shadow: #1da1f2 1px 0 10px;
 }
 
-.login-user {
-    display: none;
-}
-
 .admin-dashboard-heading {
     background-color: #1da1f2;
     color: #ffffff;
-}
-
-.admin-logout {
-    display: none;
-}
-
-.user-div,
-.user-dashboard,
-.admin-dashboard,
-.admin-div {
-    display: none;
 }

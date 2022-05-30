@@ -73,24 +73,8 @@
      </div>
  </nav>
 
- @if(session()->has('admin'))
- <script>
-     document.querySelector('.signUp').style.display = "none";
-     document.querySelector('.signIn').style.display = "none";
-     document.querySelector('.admin-logout').style.display = "block";
-     document.querySelector('.admin-dashboard').style.display = "block";
-     </script>
- @elseif(session()->has('email'))
- 
- <script>   
-     document.querySelector('.signUp').style.display = "none";
-     document.querySelector('.signIn').style.display = "none";
-     document.querySelector('.login-user').style.display = "block";
-     document.querySelector('.user-dashboard').style.display = "block";
- </script>
-
-@endif
 
 
- <script src="JS/jquery.slim.min.js" ></script>
- <script src="JS/bootstrap.bundle.min.js" ></script>
+
+ <script src="JS/jquery.slim.min.js"></script>
+ <script src="JS/bootstrap.bundle.min.js"></script>

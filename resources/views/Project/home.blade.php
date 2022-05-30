@@ -51,21 +51,6 @@
     </div>
 
 
-    @if(session()->has('admin'))
-    <script>
- 
-        document.querySelector('.main-div').style.display = "none";
-        document.querySelector('.admin-div').style.display = "block";
-        </script>
-    @elseif(session()->has('email'))
-    
-    <script>
-        document.querySelector('.main-div').style.display = "none";
-      
-        document.querySelector('.user-div').style.display = "block";
-    </script>
-
-    @endif
 </body>
 
 </html>
