@@ -87,13 +87,12 @@ p a:hover {
 .home-btn:hover {
     background-color: rgb(255, 255, 255);
     color: #1da1f2;
-    width: 20%;
     border: 5px dotted #1da1f2;
     border-radius: 20px;
 }
 
 .user-img {
-    cursor: pointer;
+    /* cursor: pointer; */
     border-radius: 50%;
     height: 50px;
     width: 50px;

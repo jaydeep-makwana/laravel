@@ -17,7 +17,11 @@
         @include('Project.navbar')
 
         <div class="col-lg-4  mt-5 mx-auto">
-
+            @if(session('status'))
+            <div class="alert alert-success" role="alert">
+                {{session('status')}}
+            </div>
+            @endif
             <form action="login" method="post">
                 <div class="form-head ">
 

@@ -19,8 +19,8 @@ class getUserData extends Controller
             "email" => ["required", new email],               # Custom Validation Rule using Rule Objects
             "mobile" => "required | numeric | regex:/^[0-9]{10}+$/",
             "Password" => ["required", function ($attribute, $value, $fail) {
-                if (!preg_match('/[A-Z]/', $value) || !preg_match('/[a-z]/', $value) || !preg_match('/[\d]/', $value) || !preg_match('/[!@#$%&*]/', $value)) {
-                    $fail("the $attribute must contain one uppercase,lowercase,digit and following character : !@#$%&*");
+                if (!preg_match('/[A-Za-z][0-9][!@#$%&*]$/', $value)) {
+                    $fail("the $attribute must contain one (uppercase,lowercase,number) and following character : !@#$%&*");
                 }
             }],                                             # Custom Validation Rule using Closures
             "confirm_password" => "required | same:Password",
@@ -90,7 +90,7 @@ class getUserData extends Controller
             "image" => $img_path,
         ]);
 
-        return redirect("login");
+        return redirect("login")->with('status','Your account is created successfully');
     }
 
 

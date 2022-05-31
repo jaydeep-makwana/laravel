@@ -10,64 +10,29 @@
      </button>
 
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul class="navbar-nav mr-auto">
 
-         </ul>
          <ul class="navbar-nav ml-auto">
              <li class="nav-item active ml-3 mt-1">
                  <a class="nav-link nav" href="{{ url('/') }}">Home </a>
              </li>
+             @if(!session()->has('email') && !session()->has('admin'))
              <li class="nav-item active ml-3 signUp mt-1">
                  <a class="nav-link nav" href="{{ url('signup') }}">Sign up </a>
              </li>
              <li class="nav-item active ml-3 signIn mt-1">
                  <a class="nav-link nav" href="{{ url('login') }}">Sign in </a>
              </li>
-             <li class="nav-item active ml-3 mt-1">
-                 <a class="nav-link nav user-dashboard" href="{{  url('user_dashboard')  }}">Dashboard </a>
-             </li>
-             <li class="nav-item active ml-3 mt-1">
-                 <a class="nav-link nav admin-dashboard" href="{{ url('admin_dashboard') }}">Dashboard </a>
-             </li>
+             @endif
+             @if(session()->has('email') || session()->has('admin'))
              <li class="nav-item active ml-3 signIn mt-1 admin-logout">
                  <a class="btn btn-danger" href="{{ url('logout') }}">Logout </a>
              </li>
-
+             @endif
+             @if(session()->has('email'))
              <li class="nav-item active ml-3 login-user">
                  <img src="images/shutterstock_1231981675.jpg" class="user-img img-thumbnail border-dark" alt="Network Error" data-toggle="modal" data-target="#exampleModal">
-
-                 <!--Login user Modal -->
-                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                     <div class="modal-dialog login-modal">
-
-                         <div class="modal-content">
-
-                             <div class="modal-header">
-
-                                 <h2></h2>
-                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                     <span aria-hidden="true">&times;</span>
-                                 </button>
-
-                             </div>
-
-                             <!-- <div class="modal-body">
-                                 <h2><a href="" class="btn btn-danger">Delete Account</a></h2>
-                             </div> -->
-
-
-                             <div class="modal-body">
-                                 <h2><a href="{{ url('logout')}}" class="btn btn-danger">Log out</a></h2>
-                             </div>
-
-                         </div>
-
-                     </div>
-
-                 </div>
-                 <!-- modal finished -->
              </li>
+             @endif
          </ul>
 
      </div>

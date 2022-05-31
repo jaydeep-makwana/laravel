@@ -28,24 +28,6 @@
                 <a href="{{url('login')}}" class="btn home-btn">Sign In</a>
             </div>
         </div>
-        <div class="user-div">
-
-
-            <h1 class="text-center mt-5 font-style">Hello user </h1>
-            <h2 class="text-center mt-5 font-style">Welcome to Twitter.</h2>
-        </div>
-        <div class="admin-div">
-
-
-            <h1 class="text-center mt-5 font-style">Hello Admin </h1>
-            <h2 class="text-center mt-5 font-style">Welcome to Twitter.</h2>
-        </div>
-
-
-
-
-
-
 
         @include('Project.footer')
     </div>
