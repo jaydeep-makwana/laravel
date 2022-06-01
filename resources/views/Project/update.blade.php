@@ -15,6 +15,14 @@
 
 <body>
 
+    <!-- {{print_r(explode(',', $detail->hobby))}} -->
+    <?php
+    $arr =  $detail->hobby ;
+    if (strpos($arr,'reading')) {
+      echo 'done';
+    }  
+    ?>
+ 
     <div class="container-fluid p-0">
         @include('Project.navbar')
         <!-- register form -->

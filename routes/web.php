@@ -26,16 +26,16 @@ use App\Http\Controllers\Logout;
 
 # => PROJECT ROUTES
 
-Route::view("/", "Project.home");
-Route::view("signup", "Project.signup");
+Route::view("/", "Project.home")->middleware('login');
+Route::view("signup", "Project.signup")->middleware('login');
 Route::view('login','Project.login')->middleware('login');
 Route::view('user_dashboard','Project.user_dashboard')->middleware('logout');
 
 
 Route::post("user_data", [getUserData::class, "user_data"]);
 Route::post("login", [login::class, "loginDetails"]);
-Route::view("about", "Project.about");
-Route::view("career", "Project.career");
+Route::view("about", "Project.about")->middleware('login');
+Route::view("career", "Project.career")->middleware('login');
 
 Route::get("db", [dbTest::class, "fetchRecord"]);             # fetch data from database
 

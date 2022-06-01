@@ -12,10 +12,10 @@
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
          <ul class="navbar-nav ml-auto">
+             @if(!session()->has('email') && !session()->has('admin'))
              <li class="nav-item active ml-3 mt-1">
                  <a class="nav-link nav" href="{{ url('/') }}">Home </a>
              </li>
-             @if(!session()->has('email') && !session()->has('admin'))
              <li class="nav-item active ml-3 signUp mt-1">
                  <a class="nav-link nav" href="{{ url('signup') }}">Sign up </a>
              </li>

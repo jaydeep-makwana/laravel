@@ -14,13 +14,13 @@ class getUserData extends Controller
         $records->validate([
             "firstName" => "required | min:3 | max:10 | alpha",
             "lastName" => "required | min:3 | max:10 | alpha",
-            "dob" => "required",                     # regex 
+            "dob" => "required",
             "gender" => "required",
             "email" => ["required", new email],               # Custom Validation Rule using Rule Objects
-            "mobile" => "required | numeric | regex:/^[0-9]{10}+$/",
+            "mobile" => "required | numeric | regex:/^[0-9]{10}+$/",         # regex 
             "Password" => ["required", function ($attribute, $value, $fail) {
-                if (!preg_match('/[A-Za-z][0-9][!@#$%&*]$/', $value)) {
-                    $fail("the $attribute must contain one (uppercase,lowercase,number) and following character : !@#$%&*");
+                if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{8,16}$/', $value)) {
+                    $fail("the password must contain minimum 8 and maximum 16 character and one uppercase, one lowercase, one number and spacial character.");
                 }
             }],                                             # Custom Validation Rule using Closures
             "confirm_password" => "required | same:Password",
@@ -90,7 +90,7 @@ class getUserData extends Controller
             "image" => $img_path,
         ]);
 
-        return redirect("login")->with('status','Your account is created successfully');
+        return redirect("login")->with('status', 'Your account is created successfully');
     }
 
 

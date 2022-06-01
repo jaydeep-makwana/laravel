@@ -13,8 +13,8 @@
 
 <body>
 
-  
-    
+
+
     <div class="container-fluid p-0 form-border">
         @include('Project.functions')
         @include('Project.navbar')
@@ -41,7 +41,7 @@
                             <input class="form-control" type="text" name="lastName" id="last_name" value="{{ old('lastName') }}">
                             <small>@error('lastName'){{$message}} @enderror </small>
                         </div>
-                        
+
                         <label for="">Gender <small>@error('gender'){{$message}} @enderror </small>
                             <div class="form-check">
                                 <label for="male" class="form-check-label">
@@ -61,7 +61,7 @@
                             <label for="age">Date Of Birth</label>
                             <input type="date" class="form-control" name="dob" id="dob" value="{{ old('dob') }}">
                             <small>@error('dob'){{$message}} @enderror </small>
-                        </div>    
+                        </div>
 
 
 
@@ -130,31 +130,32 @@
                         <label for=""> Hobby <small>@error('hobby'){{$message}} @enderror </small>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="reading" value="reading"   {{hobbyCheck('reading')}}>
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="reading" value="reading" {{hobbyCheck('reading')}}>
                                 <label for="reading" class="form-check-label">Reading</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="dancing" value="dancing"   {{hobbyCheck('dancing')}}>
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="dancing" value="dancing" {{hobbyCheck('dancing')}}>
                                 <label for="dancing" class="form-check-label">Dancing</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="programming" value="programming"   {{hobbyCheck('programming')}}>
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="programming" value="programming" {{hobbyCheck('programming')}}>
                                 <label for="programming" class="form-check-label">Programming</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="gaming" value="gaming"   {{hobbyCheck('gaming')}}>
+                                <input type="checkbox" class="form-check-input" name="hobby[]" id="gaming" value="gaming" {{hobbyCheck('gaming')}}>
                                 <label for="gaming" class="form-check-label">Gaming</label>
                             </div>
 
                         </label>
 
                         <div class="form-group">
-                            <label for="exampleFormControlFile1">Upload Your Photo</label>
-                            <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                            <label for="image">Upload Your Photo</label>
+                            <input type="file" name="image" class="form-control-file" id="image">
                             <small> @error('image'){{$message}} @enderror </small>
+                            <input type="checkbox" name="" id="toggel" onclick="change()">
                         </div>
 
 
@@ -196,7 +197,30 @@
         @include('Project.footer')
     </div>
 
+    <script>
+        var update = document.getElementById('toggel');
+        var img = document.getElementById('image');
+        var pass = document.getElementById('password');
+        var cPass = document.getElementById('cPpassword');
 
+        img.type == 'text';
+
+        function change() {
+            console.log(1);
+            // if (img.type == 'file') {
+            if (pass.style.display = 'block') {
+
+                // img.type = 'text';
+                pass.style.display = 'none';
+
+            } else {
+
+                pass.style.display = 'block';
+                // img.type = 'file';
+
+            }
+        }
+    </script>
     <!-- <script>
         let checkBox = document.getElementById("folderCkeck");
         let folder_name = document.getElementById("folderName");
