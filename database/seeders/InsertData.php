@@ -20,19 +20,16 @@ class  InsertData extends Seeder
         $faker = Factory::create();
         for ($i = 0; $i < 10; $i++) {
 
-            DB::table('employees')->insert([
+            DB::table('users')->insert([
                 "first_name" => $faker->firstName(),
                 "last_name" => $faker->lastName(),
-                "age" => 22,
+                "DOB" => date("Y-m-d"),
                 "gender" => 'male',
-                "department" => $faker->jobTitle(),
-                "date_of_join" => $faker->date(),
-                "salary" => $faker->biasedNumberBetween(10000, 20000),
                 "email" => $faker->email(),
                 "mobile" => 1234567890,
                 "password" => Hash::make($faker->password(6, 8)),
                 "hobby" => $faker->jobTitle(),
-                "image" => 'photos/left_facing.png',
+                "image" => 'photos/twitter.png',
             ]);
         }
     }

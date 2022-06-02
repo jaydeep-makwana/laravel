@@ -12,17 +12,14 @@
 
 @foreach($data as $detail)
 @endforeach
+<?php
+$hobbies = explode(',', $detail->hobby);
+print_r($hobbies);
+?>
 
 <body>
 
-    <!-- {{print_r(explode(',', $detail->hobby))}} -->
-    <?php
-    $arr =  $detail->hobby ;
-    if (strpos($arr,'reading')) {
-      echo 'done';
-    }  
-    ?>
- 
+
     <div class="container-fluid p-0">
         @include('Project.navbar')
         <!-- register form -->
@@ -71,7 +68,7 @@
                         </div>
 
 
- 
+
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" name="email" id="email" value="{{$detail->email}}">
@@ -90,30 +87,39 @@
                             <small>@error('mobile'){{$message}} @enderror </small>
                         </div>
 
-
-                        <label for=""> Hobby <small>@error('hobby'){{$message}} @enderror </small>
-
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="reading" value="reading" @if($detail->hobby =='reading' ) checked @endif>
-                                <label for="reading" class="form-check-label">Reading</label>
+                        <!-- <div id="show-hobby">
+                            <div class="form-group">
+                                <label for="hobby">Hobby</label>
+                                <input type="text" class="form-control" name="hobby" id="hobby" value="{{$detail->hobby}}" readonly>
                             </div>
+                        </div> -->
 
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="dancing" value="dancing" @if($detail->hobby =='dancing' ) checked @endif>
-                                <label for="dancing" class="form-check-label">Dancing</label>
-                            </div>
+                        <div id="update-hobby">
+                            <label for=""> Hobby <small>@error('hobby'){{$message}} @enderror </small>
 
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="programming" value="programming" @if($detail->hobby =='programming' ) checked @endif>
-                                <label for="programming" class="form-check-label">Programming</label>
-                            </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="hobby[]" id="reading" value="reading" @if(str_contains($detail->hobby, 'reading')) checked @endif  >
+                                    <label for="reading" class="form-check-label">Reading</label>
+                                </div>
 
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="hobby[]" id="gaming" value="gaming" @if($detail->hobby =='gaming' ) checked @endif>
-                                <label for="gaming" class="form-check-label">Gaming</label>
-                            </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="hobby[]" id="dancing" value="dancing" @if(str_contains($detail->hobby, 'dancing')) checked @endif  >
+                                    <label for="dancing" class="form-check-label">Dancing</label>
+                                </div>
 
-                        </label>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="hobby[]" id="programming" value="programming"  @if(str_contains($detail->hobby, 'programming')) checked @endif >
+                                    <label for="programming" class="form-check-label">Programming</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="hobby[]" id="gaming" value="gaming" @if(str_contains($detail->hobby, 'gaming')) checked @endif  >
+                                    <label for="gaming" class="form-check-label">Gaming</label>
+                                </div>
+
+                            </label>
+                        </div>
+
 
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Upload Your Photo</label>
@@ -135,7 +141,9 @@
     </div>
 
 
+    <script>
 
+    </script>
 </body>
 
 </html>

@@ -155,7 +155,6 @@
                             <label for="image">Upload Your Photo</label>
                             <input type="file" name="image" class="form-control-file" id="image">
                             <small> @error('image'){{$message}} @enderror </small>
-                            <input type="checkbox" name="" id="toggel" onclick="change()">
                         </div>
 
 
@@ -197,40 +196,7 @@
         @include('Project.footer')
     </div>
 
-    <script>
-        var update = document.getElementById('toggel');
-        var img = document.getElementById('image');
-        var pass = document.getElementById('password');
-        var cPass = document.getElementById('cPpassword');
-
-        img.type == 'text';
-
-        function change() {
-            console.log(1);
-            // if (img.type == 'file') {
-            if (pass.style.display = 'block') {
-
-                // img.type = 'text';
-                pass.style.display = 'none';
-
-            } else {
-
-                pass.style.display = 'block';
-                // img.type = 'file';
-
-            }
-        }
-    </script>
-    <!-- <script>
-        let checkBox = document.getElementById("folderCkeck");
-        let folder_name = document.getElementById("folderName");
-
-        checkBox.addEventListener('click', () => {
-
-            folder_name.disabled = false;
-
-        });
-    </script> -->
+ 
 </body>
 
 </html>
