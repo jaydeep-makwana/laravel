@@ -12,10 +12,7 @@
 
 @foreach($data as $detail)
 @endforeach
-<?php
-$hobbies = explode(',', $detail->hobby);
-print_r($hobbies);
-?>
+
 
 <body>
 

@@ -109,6 +109,11 @@ class getUserData extends Controller
         return view('Project.update', ['data' => $data]);
     }
 
+    function getimg()
+    {
+       return DB::table('users')->where('id',3)->value('image');
+    }
+
     function update(Request $records, $id)
     {
         $records->validate([
@@ -119,13 +124,16 @@ class getUserData extends Controller
             "email" => ["required", new email],               # Custom Validation Rule using Rule Objects
             "mobile" => "required | numeric | regex:/^[0-9]{10}+$/",                                            # Custom Validation Rule using Closures
             "hobby" => "required",
-            "image" => "required"
         ]);
-
+        $img_path = "";
         $hobby = implode(", ", $records->input('hobby'));
-        $fileName = $records->file('image')->getClientOriginalName();
-        $img_path = $records->file('image')->storeAs('photos', $fileName, 'uploads');
-
+        if (!file_exists($records->file('image'))) {
+            $img_path = DB::table('users')->where('id',$id)->value('image');
+        }else{
+            $fileName = $records->file('image')->getClientOriginalName();
+            $img_path = $records->file('image')->storeAs('photos', $fileName, 'uploads');
+        }
+            
         DB::table('users')->where('id', $id)->update([
             "first_name" => $records->input('firstName'),
             "last_name" => $records->input('lastName'),
@@ -141,5 +149,3 @@ class getUserData extends Controller
         return redirect("admin_dashboard");
     }
 }
-
- 
