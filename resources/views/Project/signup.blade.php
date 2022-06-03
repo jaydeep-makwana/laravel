@@ -121,10 +121,10 @@
                             <small>@error('confirm_password'){{$message}} @enderror </small>
                         </div>
 
-                        <!-- <div class="form-check showPassword">
+                        <div class="form-check showPassword">
                             <input type="checkbox" class="form-check-input" id="showPassword">
                             <label for="showPassword" class="form-check-label">show password</label>
-                        </div> -->
+                        </div>
 
 
                         <label for=""> Hobby <small>@error('hobby'){{$message}} @enderror </small>
@@ -196,7 +196,8 @@
         @include('Project.footer')
     </div>
 
- 
+    
+    <script src="{{url('JS/main.js')}}"></script>
 </body>
 
 </html>

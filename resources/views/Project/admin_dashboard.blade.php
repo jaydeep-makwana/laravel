@@ -69,7 +69,7 @@
     <script>
         function delete_record(id) {
             
-            let confirmation = confirm('are you sure for delete this record' + id);
+            let confirmation = confirm('Are you sure to delete this record?');
             if (confirmation === true) {
                 window.location.replace('delete/'+id);
             } 

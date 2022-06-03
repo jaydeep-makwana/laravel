@@ -24,11 +24,11 @@
 
         <div class="container row mt-5  owner ">
 
-            <div class="col col-lg-4 col-sm-12 ">
+            <div class="col col-lg-4">
                 <!-- "rounded" class only round corner -->
                 <img src="{{ asset('images/elon-musk-twitter.jpg')}}" class="img-thumbnail border-darkmt-1" width="300px" alt="...">
             </div>
-            <div class="col col-lg-8 col-sm-12 ">
+            <div class="col col-lg-8">
 
                 <h3 class="mt-1 p-3  para border border-dark">
                     On April 25, 2022, the Twitter board of directors agreed to a $44 billion buyout by Elon Musk, the CEO of SpaceX and Tesla, potentially making it one of the biggest deals to turn a company private.

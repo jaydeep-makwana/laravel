@@ -14,14 +14,14 @@
 <body>
     <div class="container-fluid p-0 bg-light">
         @include('Project.navbar')
-        
+
         <div class="col-lg-4  mt-5 mx-auto">
             @if(session('status'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <strong>Success!</strong>  {{session('status')}}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                <strong>Success!</strong> {{session('status')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             @endif
             <form action="login" method="post">
@@ -42,7 +42,10 @@
                         <input class="form-control" type="password" id="password" name="password" value="">
                         <small>@error("password"){{$message}}@enderror</small>
                     </div>
-
+                    <div class="form-check showPassword">
+                        <input type="checkbox" class="form-check-input" id="showPassword">
+                        <label for="showPassword" class="form-check-label">show password</label>
+                    </div>
                     <!-- <div class="form-check showPassword">
                     <input type="checkbox" class="form-check-input" id="signInPass">
                     <label for="signInPass" class="form-check-label">show password</label>
@@ -64,6 +67,7 @@
     </div>
 
 
+ <script src="{{url('JS/main.js')}}"></script>
 </body>
 
 </html>
