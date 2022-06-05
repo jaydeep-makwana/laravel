@@ -11,6 +11,7 @@ use App\Http\Controllers\dbTest;
 use App\Http\Controllers\getUserData;
 use App\Http\Controllers\login;
 use App\Http\Controllers\Logout;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,12 @@ Route::view('form','Practice.js_form');
 Route::view('pincode','Practice.pincode');
 Route::view('programming','Practice.programming');
 Route::view('todo','Practice.todo');
+
+# change languages in mac view
+Route::get('mac/{lang?}',function ($lang = NULL){
+    App::setLocale($lang);
+    return view('Practice.mac');
+});
 
 Route::get('http', [ApiData::class, 'fetchApi']);
 
