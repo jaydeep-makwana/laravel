@@ -122,3 +122,18 @@ p a:hover {
 .showPassword {
     float: right;
 }
+
+.z-0 {
+    display: none;
+}
+
+.pagination nav {
+    width: fit-content;
+    margin: auto;
+}
+
+.prLabel {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: large;
+}

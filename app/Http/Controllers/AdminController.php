@@ -8,9 +8,9 @@ use App\Models\User;
 class AdminController extends Controller
 {
     
-    function user_records(){
+    function user_records($num = 5){
         # fetch records using model
-        $users = User::all();
+        $users = User::paginate($num);
         return view("Project.admin_dashboard", ["records" => $users]);
     }
 }

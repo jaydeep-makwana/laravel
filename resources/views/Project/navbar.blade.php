@@ -33,6 +33,7 @@
                  <img src="images/shutterstock_1231981675.jpg" class="user-img img-thumbnail border-dark" alt="Network Error" data-toggle="modal" data-target="#exampleModal">
              </li>
              @endif
+
          </ul>
 
      </div>

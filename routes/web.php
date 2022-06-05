@@ -41,7 +41,7 @@ Route::view("career", "Project.career")->middleware('login');
 Route::get("db", [dbTest::class, "fetchRecord"]);             # fetch data from database
 
 # fetch data using model
-Route::get('admin_dashboard', [AdminController::class, "user_records"])->middleware('adminLogout');
+Route::get('admin_dashboard/{no?}', [AdminController::class, "user_records"])->middleware('adminLogout');
 
 # sign out user
 Route::get('logout',[Logout::class,'logout']);

@@ -15,13 +15,15 @@
 
         <!-- language dropdown -->
         <div class="col-md-3 mb-3">
-           <h2> <label for="validationDefault04">Languages</label></h2>
-            <select class="custom-select" id="validationDefault04" required>
-                <option selected disabled value="">Choose...</option>
-                <option><a href="{{url('mac/en')}}">English</a></option>
-                <option><a href="{{url('mac/gu')}}">Gujarati</a></option>
+            <h2> <label for="language">Languages</label></h2>
+            <select class="custom-select" id="language" onchange="selectLang(this)">
+                <option id="english" value="{{url('mac/en')}}">English</option>
+                <option id="hindi" value="{{url('mac/hi')}}">Hindi</option>
+                <option id="gujarati" value="{{url('mac/gu')}}">Gujarati</option>
             </select>
         </div>
+
+
 
         <!-- main content -->
         <div class="container text-center">
@@ -56,6 +58,31 @@
 
     </div>
 
+
+    <script>
+        let english = document.getElementById('english');
+        let hindi = document.getElementById('hindi');
+        let gujarati = document.getElementById('gujarati');
+
+        function selectLang(lang) {
+            changeLocation = window.location = lang.value;
+        }
+
+
+        let getPath = window.location.pathname;
+        console.log(getPath);
+        switch (getPath) {
+            case '/mac/gu':
+                gujarati.setAttribute('selected',true);
+                break;
+            case '/mac/hi' :
+                hindi.setAttribute('selected',true);
+                break;
+                default:
+                english.setAttribute('selected',true);
+                break;
+        }
+    </script>
 </body>
 
 </html>

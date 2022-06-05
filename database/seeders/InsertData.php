@@ -18,7 +18,7 @@ class  InsertData extends Seeder
     public function run()
     {
         $faker = Factory::create();
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
 
             DB::table('users')->insert([
                 "first_name" => $faker->firstName(),
