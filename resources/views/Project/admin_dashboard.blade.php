@@ -129,9 +129,6 @@
             case '/admin_dashboard/20':
                 record20.setAttribute('selected', true);
                 break;
-            default:
-                record5.setAttribute('selected', true);
-                break;
         }
     </script>
 

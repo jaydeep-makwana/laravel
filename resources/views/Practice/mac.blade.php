@@ -78,9 +78,6 @@
             case '/mac/hi' :
                 hindi.setAttribute('selected',true);
                 break;
-                default:
-                english.setAttribute('selected',true);
-                break;
         }
     </script>
 </body>
