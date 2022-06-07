@@ -38,7 +38,6 @@ Route::post("login", [login::class, "loginDetails"]);
 Route::view("about", "Project.about")->middleware('login');
 Route::view("career", "Project.career")->middleware('login');
 
-Route::get("db", [dbTest::class, "fetchRecord"]);             # fetch data from database
 
 # fetch data using model
 Route::get('admin_dashboard/{no?}', [AdminController::class, "user_records"])->middleware('adminLogout');
@@ -73,6 +72,8 @@ Route::get('mac/{lang?}',function ($lang = NULL){
     App::setLocale($lang);
     return view('Practice.mac');
 });
+
+Route::get("db", [dbTest::class, "fetchRecord"]);             # fetch data from database
 
 Route::get('http', [ApiData::class, 'fetchApi']);
 

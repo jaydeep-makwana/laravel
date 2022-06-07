@@ -6,27 +6,42 @@ use App\Rules\email;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class getUserData extends Controller
 {
-    function user_data(Request $records)
+
+    function login(Request $input)
     {
-        $records->validate([
-            "firstName" => "required | min:3 | max:10 | alpha",
-            "lastName" => "required | min:3 | max:10 | alpha",
-            "dob" => "required",
-            "gender" => "required",
-            "email" => ["required", new email],               # Custom Validation Rule using Rule Objects
-            "mobile" => "required | numeric | regex:/^[0-9]{10}+$/",         # regex 
-            "Password" => ["required", function ($attribute, $value, $fail) {
-                if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{8,16}$/', $value)) {
-                    $fail("the password must contain minimum 8 and maximum 16 character and one uppercase, one lowercase, one number and spacial character.");
-                }
-            }],                                             # Custom Validation Rule using Closures
-            "confirm_password" => "required | same:Password",
-            "hobby" => "required",
-            "image" => "required | mimes : png,jpg,jpeg"
-        ]);
+
+
+    }
+
+    function user_data(Request $records, User $user)
+    {
+        $records->validate(
+            [
+                "firstName" => "required | min:3 | max:10 | alpha",
+                "lastName" => "required | min:3 | max:10 | alpha",
+                "dob" => "required",
+                "gender" => "required",
+                "email" => ["required", new email, "unique:users,email" . $user->id],               # Custom Validation Rule using Rule Objects
+                "mobile" => "required | numeric | regex:/^[0-9]{10}+$/ | unique:users,mobile" . $user->id,         # regex 
+                "Password" => ["required", function ($attribute, $value, $fail) {
+                    if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{8,16}$/', $value)) {
+                        $fail("the password must contain minimum 8 and maximum 16 character and one uppercase, one lowercase, one number and one spacial character.");
+                    }
+                }],                                             # Custom Validation Rule using Closures
+                "confirm_password" => "required | same:Password",
+                "hobby" => "required",
+                "image" => "required | mimes:png,jpg,jpeg,PNG "
+            ],
+
+            [
+                'mobile.unique' => 'The mobile number has already been taken.',
+            ]
+        );
+
 
         $hobby = implode(", ", $records->input('hobby'));
         $fileName = $records->file('image')->getClientOriginalName();

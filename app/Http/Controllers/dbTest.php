@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class dbTest extends Controller
 {
     function fetchRecord()
     {
-
+         echo  Auth::id();
         ## SQL Query
 
         # insert record
