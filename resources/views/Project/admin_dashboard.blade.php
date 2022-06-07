@@ -29,9 +29,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav ml-auto">
-                    
+
                     <li class="nav-item active ml-3 prLabel">
-                         Per Page Records :  
+                        Per Page Records :
                     </li>
                     <li class="nav-item active ml-3 mt-1">
                         <select name="department" class="form-control" id="department" onchange="noOfRecords(this)">
@@ -85,7 +85,7 @@
                         <td class="bg-light">{{$record->hobby}}</td>
                         <td class="bg-light"><img src="{{ asset($record->image) }}" width="75" height="75" alt=""> </td>
                         <td class="bg-light"><button type="button" onclick="delete_record('{{$record->id}}')" class="btn btn-danger">Delete</button></td>
-                        <td class="bg-light"><a href="edit/{{$record->id}}" class="btn btn-warning">Update</a></td>
+                        <td class="bg-light"><a href='{{url("edit/$record->id")}}' class="btn btn-warning">Update</a></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -108,8 +108,9 @@
         function delete_record(id) {
 
             let confirmation = confirm('Are you sure to delete this record?');
+            
             if (confirmation === true) {
-                window.location.replace('delete/' + id);
+                window.location ='{{url("delete")}}/'+id;
             }
         }
 

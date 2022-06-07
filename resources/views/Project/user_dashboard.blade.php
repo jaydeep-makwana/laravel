@@ -24,8 +24,6 @@
 
         </div>
 
-
-        @include('Project.footer')
     </div>
 
 

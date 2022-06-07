@@ -25,7 +25,7 @@ class getUserData extends Controller
             }],                                             # Custom Validation Rule using Closures
             "confirm_password" => "required | same:Password",
             "hobby" => "required",
-            "image" => "required"
+            "image" => "required | mimes : png,jpg,jpeg"
         ]);
 
         $hobby = implode(", ", $records->input('hobby'));
@@ -111,7 +111,7 @@ class getUserData extends Controller
 
     function getimg()
     {
-       return DB::table('users')->where('id',3)->value('image');
+        return DB::table('users')->where('id', 3)->value('image');
     }
 
     function update(Request $records, $id)
@@ -128,12 +128,12 @@ class getUserData extends Controller
         $img_path = "";
         $hobby = implode(", ", $records->input('hobby'));
         if (!file_exists($records->file('image'))) {
-            $img_path = DB::table('users')->where('id',$id)->value('image');
-        }else{
+            $img_path = DB::table('users')->where('id', $id)->value('image');
+        } else {
             $fileName = $records->file('image')->getClientOriginalName();
             $img_path = $records->file('image')->storeAs('photos', $fileName, 'uploads');
         }
-            
+
         DB::table('users')->where('id', $id)->update([
             "first_name" => $records->input('firstName'),
             "last_name" => $records->input('lastName'),
