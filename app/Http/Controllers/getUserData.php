@@ -7,15 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class getUserData extends Controller
 {
-
-    function login(Request $input)
-    {
-
-
-    }
 
     function user_data(Request $records, User $user)
     {
@@ -105,7 +100,7 @@ class getUserData extends Controller
             "image" => $img_path,
         ]);
 
-        return redirect("login")->with('status', 'Your account is created successfully');
+        return redirect("login")->with('success', 'Your account is created successfully.');
     }
 
 
