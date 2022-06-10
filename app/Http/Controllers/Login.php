@@ -27,13 +27,3 @@ class Login extends Controller
       }
    }
 }
-
-// function login(Request $input)
-// {
-//          if (Auth::attempt($input->only('email','password'))) {
-//              echo 'correct';
-//          }else{
-//              echo 'incorrect';
-//          }
-
-// }

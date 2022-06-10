@@ -44,22 +44,18 @@
 
                     <div class="form-group">
                         <label for="email" class="">Email</label>
-                        <input class="form-control" type="text" name="email" id="email" value="">
+                        <input class="form-control" type="text" name="email" id="email" value="{{ old('email') }}">
                         <small>@error("email"){{$message}}@enderror</small>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input class="form-control" type="password" id="password" name="password" value="">
+                        <input class="form-control" type="password" id="password" name="password" value="{{ old('password') }}">
                         <small>@error("password"){{$message}}@enderror</small>
                     </div>
                     <div class="form-check showPassword">
                         <input type="checkbox" class="form-check-input" id="showPassword">
                         <label for="showPassword" class="form-check-label">show password</label>
                     </div>
-                    <!-- <div class="form-check showPassword">
-                    <input type="checkbox" class="form-check-input" id="signInPass">
-                    <label for="signInPass" class="form-check-label">show password</label>
-                    </div> -->
 
                     <input type="submit" value='Sign In' class="btn btn-primary">
 
