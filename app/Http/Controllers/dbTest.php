@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class dbTest extends Controller
 {
     function fetchRecord()
     {
-         echo  Auth::id();
+        //  echo  Auth::id();
+
         ## SQL Query
 
         # insert record
@@ -37,5 +39,54 @@ class dbTest extends Controller
 
         # Fetch spacific value
         // return DB::table('employees')->where('emp_id',2)->value('first_name');
+
+        
+        // $img_path = $records->file('image')->move('photos', $fileName);   # this image will save in public/photos folder
+
+
+
+        # save img as original/random name or spacific folder
+
+        // $folderName = $records->input('folderName');
+        // if (isset($folderName)) {
+
+        //     if ($records->input('fileName') == 'original') {
+        //         $img_path = $records->file('image')->storeAs($folderName, $fileName, 'uploads');
+        //     } else {
+
+        //         $img_path = $records->file('image')->store($folderName, 'uploads');
+        //     }
+        // } else {
+
+        //     if ($records->input('fileName') == 'original') {
+        //         $img_path = $records->file('image')->storeAs('images', $fileName, 'uploads');
+        //     } else {
+
+        //         $img_path = $records->file('image')->store('images', 'uploads');
+        //     }
+        // }
+
+
+        # insert data using sql query
+        // DB::insert(
+        //     "INSERT INTO `employees` (`first_name`,`last_name`,`age`,`gender`,`department`,`date_of_join`,`salary`,`email`,`mobile`,`password`,`hobby`) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+        //     [
+        //         $records->input('firstName'),
+        //         $records->input('lastName'),
+        //         $records->input('age'),
+        //         $records->input('gender'),
+        //         $records->input('department'),
+        //         $records->input('date_of_join'),
+        //         $records->input('salary'),
+        //         $records->input('email'),
+        //         $records->input('mobile'),
+        //         $records->input('Password'),
+        //         $hobby
+        //     ]
+        // );
+
+    //    return Crypt::encryptString('$2y$10$yZ/SHy6jly.tQ3Rxf6nX7OZjxpC.NwJeHP7zDbMqX2UDMy3.ruGGm');
+    //    return Crypt::decrypt('$2y$10$yZ/SHy6jly.tQ3Rxf6nX7OZjxpC.NwJeHP7zDbMqX2UDMy3.ruGGm');
+
     }
 }

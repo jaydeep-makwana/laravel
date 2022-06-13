@@ -27,7 +27,8 @@ class  InsertData extends Seeder
                 "gender" => 'male',
                 "email" => $faker->email(),
                 "mobile" => 1234567890,
-                "password" => Hash::make($faker->password(6, 8)),
+                // "password" => Hash::make($faker->password(6, 8)),
+                'password' => 123,
                 "hobby" => $faker->jobTitle(),
                 "image" => 'photos/twitter.png',
             ]);

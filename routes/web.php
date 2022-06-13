@@ -7,6 +7,7 @@ use App\Http\Controllers\mobile;
 use App\Http\Controllers\percentage;
 use App\Http\Controllers\show_data;
 use App\Http\Controllers\ApiData;
+use App\Http\Controllers\CrudOperationController;
 use App\Http\Controllers\dbTest;
 use App\Http\Controllers\getUserData;
 use App\Http\Controllers\login;
@@ -27,30 +28,30 @@ use Illuminate\Support\Facades\App;
 
 # => PROJECT ROUTES
 
-Route::view("/", "Project.home")->middleware('login');
-Route::view("signup", "Project.signup")->middleware('login');
+Route::get('/',[CrudOperationController::class,'index'])->middleware('login');
+Route::get('signup',[CrudOperationController::class,'create'])->middleware('login');
 Route::view('login','Project.login')->middleware('login');
 Route::view('user_dashboard','Project.user_dashboard')->middleware('logout');
 
 
-Route::post("user_data", [getUserData::class, "user_data"]);
+Route::post("user_data", [CrudOperationController::class, "store"]);
 Route::post("login", [login::class, "loginDetails"]);
 Route::view("about", "Project.about")->middleware('login');
 Route::view("career", "Project.career")->middleware('login');
 
 
 # fetch data using model
-Route::get('admin_dashboard/{no?}', [AdminController::class, "user_records"])->middleware('adminLogout');
+Route::get('admin_dashboard/{no?}', [CrudOperationController::class, "show"])->middleware('adminLogout');
 
 # sign out user
 Route::get('logout',[Logout::class,'logout']);
 
 # delete data 
-Route::get('delete/{id}', [getUserData::class,'distroy']);
+Route::get('delete/{id}', [CrudOperationController::class,'destroy']);
 
 # update data 
-Route::get('edit/{id}', [getUserData::class,'edit']);
-Route::put('edit/{id}', [getUserData::class,'update']);
+Route::get('edit/{id}', [CrudOperationController::class,'edit']);
+Route::put('edit/{id}', [CrudOperationController::class,'update']);
 
 # route for check function 
 Route::view('f','Project.functions');
