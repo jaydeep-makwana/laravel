@@ -15,7 +15,8 @@ class Login extends Controller
          "password" => "required"
       ]);
       
-      if ($data['email'] === 'admin@gmail.com' && $data['password'] === '123') {
+      // if ($data['email'] === 'admin@gmail.com' && $data['password'] === '123') {
+         if(Auth::guard('admin')->attempt($data->only('email','password'))){
           $data->session()->put('admin',"Hello Admin");
           return redirect('admin_dashboard');
       } elseif(Auth::attempt($data->only('email','password'))) {
