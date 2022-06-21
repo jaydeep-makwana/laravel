@@ -14,17 +14,16 @@ class Login extends Controller
          "email" => ["required", new email],
          "password" => "required"
       ]);
-      
-      // if ($data['email'] === 'admin@gmail.com' && $data['password'] === '123') {
-         if(Auth::guard('admin')->attempt($data->only('email','password'))){
-          $data->session()->put('admin',"Hello Admin");
-          return redirect('admin_dashboard');
-      } elseif(Auth::attempt($data->only('email','password'))) {
 
+      if (Auth::attempt($data->only('email', 'password'))) {
          $data->session()->put('email', $data['email']);
          return redirect('user_dashboard');
-      }else{
-         return redirect('login')->with('fail','Invalid Email address or Password.');
+      } elseif (Auth::guard('admin')->attempt($data->only('email', 'password'))) {
+         $data->session()->put('admin', "Hello Admin");
+         return redirect('admin_dashboard');
+      } else {
+         return redirect('login')->with('fail', 'Invalid Email address or Password.');
       }
    }
 }
+
