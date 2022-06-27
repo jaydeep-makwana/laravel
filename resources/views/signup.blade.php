@@ -16,8 +16,8 @@
 
 
     <div class="container-fluid p-0 form-border">
-        @include('Project.functions')
-        @include('Project.navbar')
+        @include('functions')
+        @include('navbar')
         <!-- register form -->
         <div class="container mt-5 w-100">
             <form action="user_data" method="POST" enctype="multipart/form-data">
@@ -193,7 +193,7 @@
                 </div>
             </form>
         </div>
-        @include('Project.footer')
+        @include('footer')
     </div>
 
     

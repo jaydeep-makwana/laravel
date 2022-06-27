@@ -16,7 +16,7 @@ class Login
      */
     public function handle(Request $request, Closure $next)
     {
-        if (session()->has('email')) {
+        if (session()->has('user')) {
             return redirect('user_dashboard');
         }
         if (session()->has('admin')) {

@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class Logout extends Controller
 {
     function logout(){
-        if (session()->has('email')) {
-            session()->pull('email');
+        if (session()->has('user')) {
+            session()->pull('user');
             return redirect('login');
         }
         if (session()->has('admin')) {

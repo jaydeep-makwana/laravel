@@ -15,8 +15,10 @@ class Login extends Controller
          "password" => "required"
       ]);
 
+      # IMPORTANT NOTE :- if you want to login as Admin, so you need to manually insert data in into admins table.
+
       if (Auth::attempt($data->only('email', 'password'))) {
-         $data->session()->put('email', $data['email']);
+         $data->session()->put('user', $data['email']);
          return redirect('user_dashboard');
       } elseif (Auth::guard('admin')->attempt($data->only('email', 'password'))) {
          $data->session()->put('admin', "Hello Admin");

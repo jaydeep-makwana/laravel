@@ -12,7 +12,7 @@
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
          <ul class="navbar-nav ml-auto">
-             @if(!session()->has('email') && !session()->has('admin'))
+             @if(!session()->has('user') && !session()->has('admin'))
              <li class="nav-item active ml-3 mt-1">
                  <a class="nav-link nav" href="{{ url('/') }}">Home </a>
              </li>
@@ -23,14 +23,9 @@
                  <a class="nav-link nav" href="{{ url('login') }}">Sign in </a>
              </li>
              @endif
-             @if(session()->has('email') || session()->has('admin'))
+             @if(session()->has('user') || session()->has('admin'))
              <li class="nav-item active ml-3 signIn mt-1 admin-logout">
                  <a class="btn btn-danger" href="{{ url('logout') }}">Logout </a>
-             </li>
-             @endif
-             @if(session()->has('email'))
-             <li class="nav-item active ml-3 login-user">
-                 <img src="images/shutterstock_1231981675.jpg" class="user-img img-thumbnail border-dark" alt="Network Error" data-toggle="modal" data-target="#exampleModal">
              </li>
              @endif
 

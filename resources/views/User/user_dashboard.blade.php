@@ -14,12 +14,12 @@
 
     <div class="container-fluid h-100 bg-light p-0">
 
-        @include('Project.navbar')
+        @include('navbar')
         <div class="main-div">
 
             <h1 class="text-center mt-5 font-style">Hello user </h1>
             <h2 class="text-center mt-5 font-style">Welcome to Twitter.</h2>
-            <h3 class="text-center mt-5 font-style">Your email address is : {{session('email')}} </h3>
+            <h3 class="text-center mt-5 font-style">Your email address is : {{session('user')}} </h3>
 
 
         </div>

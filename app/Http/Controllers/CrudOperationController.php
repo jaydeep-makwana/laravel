@@ -17,7 +17,7 @@ class CrudOperationController extends Controller
      */
     public function index()
     {
-        return view('Project.home');
+        return view('home');
     }
 
     /**
@@ -27,7 +27,7 @@ class CrudOperationController extends Controller
      */
     public function create()
     {
-        return view('Project.signup');
+        return view('signup');
     }
 
     /**
@@ -93,7 +93,7 @@ class CrudOperationController extends Controller
     {
         # fetch records using model
         $users = User::paginate($num);
-        return view("Project.admin_dashboard", ["records" => $users]);
+        return view("Admin.admin_dashboard", ["records" => $users]);
     }
 
     /**
@@ -106,7 +106,7 @@ class CrudOperationController extends Controller
     {
         $data =   DB::table('users')->where('id', $id)->get();
 
-        return view('Project.update', ['data' => $data]);
+        return view('update', ['data' => $data]);
     }
 
     /**

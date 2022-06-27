@@ -14,7 +14,7 @@
 
     <div class="container-fluid h-100 bg-light p-0">
 
-        @include('Project.navbar')
+        @include('navbar')
         <div class="main-div">
 
             <h1 class="text-center mt-5 font-style">Happening now</h1>
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        @include('Project.footer')
+        @include('footer')
     </div>
 
 

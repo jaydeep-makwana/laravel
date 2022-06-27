@@ -14,7 +14,7 @@
 
 
     <div class="container-fluid p-0">
-        @include('Project.navbar')
+        @include('navbar')
 
         <div class="container">
             <h1 class="mt-5 p-2 para border border-dark mx-auto">
@@ -35,7 +35,7 @@
         </div>
 
 
-        @include('Project.footer')
+        @include('footer')
     </div>
 
 

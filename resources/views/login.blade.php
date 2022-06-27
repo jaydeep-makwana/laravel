@@ -13,7 +13,7 @@
 
 <body>
     <div class="container-fluid p-0 bg-light">
-        @include('Project.navbar')
+        @include('navbar')
 
         <div class="col-lg-4  mt-5 mx-auto">
             @if(session('fail'))
@@ -69,7 +69,7 @@
             </form>
 
         </div>
-        @include('Project.footer')
+        @include('footer')
     </div>
 
 
