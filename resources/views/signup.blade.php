@@ -63,34 +63,6 @@
                             <small>@error('dob'){{$message}} @enderror </small>
                         </div>
 
-
-
-                        <!-- <div class="form-ckeck">
-                            <label for="department">Department <small>@error('department'){{$message}} @enderror </small>
-                                <select name="department" class="form-control" id="department">
-                                    <option value="" selected disabled>---Choose Department</option>
-                                    <option value="R & D" @if(old('department')=='R & D' ) selected @endif>R & D</option>
-                                    <option value="Sales" @if(old('department')=='Sales' ) selected @endif>Sales</option>
-                                    <option value="Marketing" @if(old('department')=='Marketing' ) selected @endif>Marketing</option>
-                                    <option value="HR" @if(old('department')=='HR' ) selected @endif>HR</option>
-                                </select>
-                            </label>
-
-                        </div>
-
-                        <div class="form-group">
-                            <label for="doj">Date Of Join</label>
-                            <input type="date" class="form-control" name="date_of_join" id="doj" value="{{ old('date_of_join') }}">
-                            <small>@error('date_of_join'){{$message}} @enderror </small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="salary">Salary</label>
-                            <input type="text" class="form-control" name="salary" id="salary" value="{{ old('salary') }}">
-                            <small>@error('salary'){{$message}} @enderror </small>
-                        </div> -->
-
-
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}">
@@ -98,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <label for="mobile">Mobile No.</label>
-                            <input type="text" class="form-control" name="mobile" id="mobile" value="{{ old('mobile') }}">
+                            <input type="number" class="form-control" name="mobile" id="mobile" value="{{ old('mobile') }}">
                             <small>@error('mobile'){{$message}} @enderror </small>
                         </div>
 
