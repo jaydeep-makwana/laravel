@@ -44,7 +44,7 @@ class CrudOperationController extends Controller
                 "lastName" => "required | min:3 | max:10 | alpha",
                 "dob" => "required",
                 "gender" => "required",
-                "email" => ["required", new email, "unique:users,email" . $user->id],               # Custom Validation Rule using Rule Objects
+                "email" => "required|email:filter|unique:users,email" . $user->id,               # Custom Validation Rule using Rule Objects
                 "mobile" => "required | numeric | regex:/^[0-9]{10}+$/ | unique:users,mobile" . $user->id,         # regex 
                 "Password" => ["required", function ($attribute, $value, $fail) {
                     if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{8,16}$/', $value)) {
@@ -159,7 +159,10 @@ class CrudOperationController extends Controller
      */
     public function destroy($id)
     {
+        $user = DB::table('users')->where('id', $id)->first();
+        unlink($user->image);
         DB::table('users')->where('id', $id)->delete();
+
         return redirect("admin_dashboard");
     }
 }

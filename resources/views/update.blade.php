@@ -45,7 +45,7 @@
                             <small>@error('firstName'){{$message}} @enderror </small>
                         </div>
 
-                        <div cl ass="form-group">
+                        <div class="form-group">
                             <label for="last_name">Last Name</label>
                             <input class="form-control" type="text" name="lastName" id="last_name" value="{{$detail->last_name}}">
                             <small>@error('lastName'){{$message}} @enderror </small>
