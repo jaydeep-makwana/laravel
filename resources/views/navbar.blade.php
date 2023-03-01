@@ -28,7 +28,9 @@
                  <a class="btn btn-danger" href="{{ url('logout') }}">Logout </a>
              </li>
              @endif
-
+             <li class="nav-item active ml-3 mt-1">
+                <a class="btn btn-success" href="{{ url('send') }}">Send Mail </a>
+            </li>
          </ul>
 
      </div>
