@@ -45,7 +45,7 @@ class CrudOperationController extends Controller
                 "dob" => "required",
                 "gender" => "required",
                 "email" => "required|email:filter|unique:users,email" . $user->id,               # Custom Validation Rule using Rule Objects
-                "mobile" => "required | numeric | regex:/^[0-9]{10}+$/ | unique:users,mobile" . $user->id,         # regex 
+                // "mobile" => "required | numeric | regex:/^[0-9]{10}+$/ | unique:users,mobile" . $user->id,         # regex
                 "Password" => ["required", function ($attribute, $value, $fail) {
                     if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{8,16}$/', $value)) {
                         $fail("the password must contain minimum 8 and maximum 16 character and one uppercase, one lowercase, one number and one spacial character.");
@@ -122,7 +122,7 @@ class CrudOperationController extends Controller
             "firstName" => "required | min:3 | max:10 | alpha",
             "lastName" => "required | min:3 | max:10 | alpha",
             "gender" => "required",
-            "dob" => "required ",                     # regex 
+            "dob" => "required ",                     # regex
             "email" => ["required", new email],               # Custom Validation Rule using Rule Objects
             "mobile" => "required | numeric | regex:/^[0-9]{10}+$/",                                            # Custom Validation Rule using Closures
             "hobby" => "required",
